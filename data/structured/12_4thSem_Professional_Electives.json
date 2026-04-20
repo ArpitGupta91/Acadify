@@ -1,0 +1,102 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "4th Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch. Student selects ONE elective.",
+
+  "professional_elective_1": {
+    "note": "Student must choose ONE of the following 6 electives",
+    "credits": 4,
+    "L": 3, "T": 0, "P": 2,
+    "marks": {"MSE1":40,"MSE2":40,"CA1":8,"CA2":8,"CA3_ATT":4,"total_MSE":80,"total_CA":20,"ESE":100,"total":200},
+
+    "electives": [
+      {
+        "course_code": "CS318E",
+        "course_name": "Frontend Engineering with React & Next",
+        "elective_track": "Full Stack Product Engineering with AI (Powered by Xebia)",
+        "prerequisite": "Computer Fundamentals",
+        "total_hours": 75,
+        "units": [
+          {"unit_no":1,"title":"Foundations of React ES6","hours":9,"topics":["Features of React, React architecture and mental model","How React Works, Leveraging Virtual DOM","Setting up React, Array & object methods"]},
+          {"unit_no":2,"title":"JSX","hours":9,"topics":["Why JSX, Embedding JavaScript, Expression in JSX","Nested elements, JSX Attributes, JSX Comments","JSX Styling, The State of the Component","Defining State, Changing the State, Props, Validation"]},
+          {"unit_no":3,"title":"Elements","hours":9,"topics":["Rendering Element, Creating React Element, Updating Element","Components: Functional Component, Functional Components as Stateless"]},
+          {"unit_no":4,"title":"Redux","hours":9,"topics":["Component design patterns, Lifting state and prop drilling","Context API for global state","Redux fundamentals: Store, actions, reducers, Data flow","Redux Toolkit (modern Redux), Middleware and async logic (Thunk)","Debugging with Redux DevTools","Testing React components basics"]},
+          {"unit_no":5,"title":"NextJS","hours":9,"topics":["Next.js fundamentals: pages, routing, data fetching (SSR/SSG)","Authentication (JWT, OAuth) and session management","Integrating AI/LLM APIs for intelligent UI features","Analytics, logging, and observability","Deployment using Vercel, Netlify, or AWS Amplify"]}
+        ],
+        "lab_practicals": ["JS conditional logic, loops, array manipulations","DOM manipulation","Mini to-do list with add/edit/delete","ES6 features refactoring","React environment setup with Vite/CRA","Calculator app using React state","Form with validation using hooks","Movie/product listing with props","Redux shopping cart","Async API calls with Redux Toolkit","SPA with React Router","JWT authentication in Next.js","AI API integration in Next.js","Deploy to Vercel/Netlify"],
+        "textbooks": ["Banks, Porcello - Learning React, O'Reilly Media","Grider - Modern React with Redux, Udemy Press"]
+      },
+      {
+        "course_code": "CS307E",
+        "course_name": "Intelligent Systems with Text & Vision API",
+        "elective_track": "Next-Gen AI: From Models to Agents (Powered by Xebia)",
+        "prerequisite": "Python Programming, Linear Algebra Basics, Probability Fundamentals",
+        "total_hours": 75,
+        "units": [
+          {"unit_no":1,"title":"Natural Language Processing","hours":9,"topics":["Introduction to NLP, Types of NLP systems","How computer understands text, NLP Terminologies","Steps in NLP, NLP preprocessing pipeline","NLP Challenges","DevOps: MVP, Application Deployment, ARA, CI/CD"]},
+          {"unit_no":2,"title":"Words & Vectors","hours":9,"topics":["GloVe Word Embeddings, Word2Vec (Skip Gram, CBOW)","Advanced word vectors, Word window classification","Dependency parsing, Constituency parsing","Machine translation, Attention mechanism","RNN for language modelling, Dynamic neural networks"]},
+          {"unit_no":3,"title":"Introduction to Computer Vision and Image Processing","hours":9,"topics":["Image Processing, Elements of Image Processing System","Computer Vision, Application Areas","2D and 3D Transformation, Image Enhancement","Image Segmentation, VR/AR, Object Recognition, Object Tracking"]},
+          {"unit_no":4,"title":"Introduction to Python OpenCV","hours":9,"topics":["OpenCV: GUI Features, Pixel Editing, Geometric Transformations","Feature Detection, Video Analysis and Tracking","Histogram Equalization, Image Denoising, Object Detection","Spatial Filtering, Smoothing & Sharpening Image Filters"]},
+          {"unit_no":5,"title":"Object Recognition & Tracking","hours":9,"topics":["Shape correspondence and matching, Sliding Window Method","Tracking Strategies, Matching, Tracking with Filters","Data Association, Particle Filtering","Stereo Vision, Motion estimation, Structure from motion"]}
+        ],
+        "lab_practicals": ["Multimodal dataset preprocessing with spaCy/NLTK and OpenCV","OCR with Tesseract/EasyOCR and text preprocessing","NER and word clouds from image captions","Sentiment analysis using BERT and ResNet/VGG16","Text-based image retrieval using CLIP","Visual Question Answering (VQA) system using Hugging Face","Image captioning with CNN-LSTM, BLEU/ROUGE evaluation","Object detection with YOLOv8/Detectron2","Multimodal emotion classification","Video object detection and NLP summarization","Handwritten notes OCR and NLP classification","Multimodal fake news detector","OCR + language translation","Interactive multimodal chatbot using CLIP/BLIP"],
+        "textbooks": ["Introduction to Natural Language Processing, Jacob Eisenstein, MIT Press","Mastering OpenCV with Python, O'Reilly Media"]
+      },
+      {
+        "course_code": "CS304E",
+        "course_name": "DevOps Foundations & Version Control",
+        "elective_track": "DevOps and Autonomous Engineering (Powered by Xebia)",
+        "prerequisite": "Programming Fundamentals, Operating Systems Basics, Computer Networks Basics",
+        "total_hours": 75,
+        "units": [
+          {"unit_no":1,"title":"Traditional SDLC Models, Problems & Solutions","hours":9,"topics":["Software Development Methodologies","Waterfall Model, Classical Waterfall Model","Traditional IT Organizations, Developers vs IT Operations Conflict","Birth of Agile, Four Values of the Agile Manifesto","Agile and Lean"]},
+          {"unit_no":2,"title":"Linux Basics and Admin","hours":9,"topics":["Introduction to Linux, Importance of Linux in DevOps","Linux Basic Command Utilities, Linux Administration","Environment Variables, Networking","Linux Server Installation, RPM and YUM Installation"]},
+          {"unit_no":3,"title":"Source Code Management & Git Workflows","hours":9,"topics":["Centralized vs. distributed SCM systems (SVN vs. Git)","Git internals: commits, branches, merges, rebases","Branching strategies: GitFlow, feature branching, trunk-based dev","Pull requests, code reviews, and merge approvals","Create repositories, manage PRs, resolve merge conflicts"]},
+          {"unit_no":4,"title":"AI-Assisted Coding & Intelligent SCM","hours":9,"topics":["GitHub Copilot / CodeWhisperer basics","AI-based code completion, documentation, and refactoring","Integrating SonarQube + AI for code quality metrics","GitOps introduction: managing infra via Git (FluxCD, ArgoCD)","Build a GitOps pipeline to deploy a sample app"]},
+          {"unit_no":5,"title":"Security, Compliance & Productivity Analytics","hours":9,"topics":["Policy-as-Code using OPA","Snyk AI for pre-commit scans","Secrets management & secure Git workflows","DevEx analytics - tracking productivity and automation ROI","Building dashboards for code quality and release cadence"]}
+        ],
+        "textbooks": ["The DevOps Handbook, O'Reilly Media","The Linux DevOps Handbook, O'Reilly Media"]
+      },
+      {
+        "course_code": "CS335E",
+        "course_name": "AWS Foundations & Data Engineering",
+        "elective_track": "Data Engineering (Powered by AWS)",
+        "prerequisite": "NA",
+        "total_hours": 75,
+        "units": [
+          {"unit_no":1,"title":"Integrated AWS Cloud Foundations","hours":15,"topics":["Cloud computing fundamentals, core AWS services","Infrastructure design, security best practices","Cost management, cloud adoption strategies","Infrastructure as Code (IaC)"]},
+          {"unit_no":2,"title":"Cloud Data Ingestion and Pipeline Design","hours":15,"topics":["Data ingestion architectures","Batch, streaming, and event-driven pipelines","Data landing zones, message handling, validation","Fault-tolerant delivery mechanisms"]},
+          {"unit_no":3,"title":"Data Transformation, Modeling, and Analytics Preparation","hours":15,"topics":["Data transformation workflows","Schema management, data cleansing, enrichment","Normalization, aggregation","Modeling approaches for analytical workloads"]},
+          {"unit_no":4,"title":"Scalable Data Storage and Operational Management","hours":15,"topics":["Data storage strategies by workload characteristics","Layered architectures, partitioning, lifecycle policies","Monitoring, throughput optimization, failure detection"]},
+          {"unit_no":5,"title":"Data Security, Governance, and Compliance Management","hours":15,"topics":["Identity-based access controls, encryption strategies","Auditing mechanisms, classification policies","Governance models: accountability, traceability","Confidentiality, integrity, compliance throughout data lifecycle"]}
+        ],
+        "textbooks": ["Dua, S. - AWS Certified Data Analytics Study Guide, Wiley","Singh, G. - Data Engineering with AWS, Packt Publishing"]
+      },
+      {
+        "course_code": "CS321E",
+        "course_name": "Foundation of iOS App Development",
+        "elective_track": "Applied Apple Technologies (Powered by Apple)",
+        "prerequisite": "NA",
+        "total_hours": 75,
+        "content_covered": ["Introduction to iOS Ecosystem, Xcode Interface, Project Structure","Swift Basics: Syntax, Variables, Data Types","Control Flow: Conditions, Loops, Switch","Functions, Closures (Basics), Error Handling","Collections in Swift: Arrays, Dictionaries, Sets","Object-Oriented Swift: Classes, Structs, Enums","Optionals, Protocols, Extensions","UIKit Essentials: Views, View Controllers, Storyboards","TableView & CollectionView","Auto Layout Basics: Constraints, Adaptive UI","Mini App Project: Calculator / Notes / Gallery"],
+        "textbooks": ["Develop in Swift (Official Apple Books) - Apple's official series","Swift Apprentice (Kodeco) - foundational book on Swift language"]
+      },
+      {
+        "course_code": "IT306E",
+        "course_name": "Microsoft Azure Fundamentals",
+        "elective_track": "Cyber Security (Powered by NSDC)",
+        "prerequisite": "NA",
+        "certification_prep": "Microsoft Azure Fundamentals (AZ-900)",
+        "total_hours": 75,
+        "units": [
+          {"unit_no":1,"title":"Introduction to Cloud Computing and Azure","hours":15,"topics":["Evolution of Cloud Computing","Cloud Service Models: IaaS, PaaS, SaaS","Cloud Deployment Models: Public, Private, Hybrid","Overview of Microsoft Azure","Azure Global Infrastructure (Regions, Availability Zones)","Azure Portal, Azure CLI, Azure Resource Manager (ARM)"]},
+          {"unit_no":2,"title":"Core Azure Services: Compute, Storage & Networking","hours":15,"topics":["Azure Compute: Virtual Machines, App Services, Azure Functions","Azure Storage: Blob Storage, File Storage, Queue and Table Storage","Azure Networking: Virtual Networks, Load Balancer, VPN Gateway"]},
+          {"unit_no":3,"title":"Azure Data Services for Data Engineering","hours":15,"topics":["Azure SQL Database, Azure Cosmos DB","Azure Data Factory, Azure Synapse Analytics","Azure Data Lake Storage","Basic Data Engineering use cases on Azure"]},
+          {"unit_no":4,"title":"Security, Identity, and Governance in Azure","hours":15,"topics":["Azure Security Fundamentals, Azure Active Directory","Role-Based Access Control (RBAC)","Azure Policies and Blueprints","Azure Monitor and Log Analytics","Compliance and Trust in Azure"]},
+          {"unit_no":5,"title":"Azure Pricing, SLA, and Cloud Management","hours":15,"topics":["Azure Pricing Models, Cost Management and Billing","Azure Service Level Agreements (SLAs)","Azure Support Plans","Resource Optimization and Best Practices","Overview of AZ-900 Certification Exam Pattern"]}
+        ],
+        "textbooks": ["Exam Ref AZ-900: Microsoft Azure Fundamentals, Jim Cheshire, Microsoft Press","Learning Microsoft Azure: Cloud Computing and Development Fundamentals, Andersson, Carrio, O'Reilly"]
+      }
+    ]
+  }
+}

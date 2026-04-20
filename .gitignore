@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Vector store artifacts
+vector_store/faiss_index/
+
+# OS files
+.DS_Store
+Thumbs.db

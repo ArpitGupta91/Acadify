@@ -1,0 +1,113 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "3rd Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "CS206L",
+  "course_name": "Operating System",
+  "L": 3, "T": 0, "P": 0, "credits": 3,
+  "type": "Lecture",
+  "category": "Major (Core)",
+  "BOS": "CSE",
+  "prerequisite": "Basic knowledge on Computer System and system memory, Computer Organization and Logic Design (COLD)",
+  "total_lecture_hours": 45,
+
+  "marks": {
+    "MSE1": 30, "MSE2": 30,
+    "CA1": 6, "CA2": 6, "CA3_ATT": 3,
+    "total_MSE": 60, "total_CA": 15,
+    "ESE": 75, "total": 150
+  },
+
+  "course_objectives": [
+    "Provide comprehensive understanding of operating systems, their components, structures, and functionalities.",
+    "Cover process management, memory management, file systems, and concurrency.",
+    "Emphasize practical aspects: system calls, Linux commands, shell scripting, and scheduling algorithms."
+  ],
+
+  "course_outcomes": [
+    "CO1: Understand the need, evolution and design issues of various categories of operating systems.",
+    "CO2: Apply different CPU scheduling algorithms and deadlock handling methods.",
+    "CO3: Analyze the principles of concurrency control and process synchronization problem.",
+    "CO4: Analyze various memory management techniques for efficient memory allocation.",
+    "CO5: Apply the concept of various I/O management, Disk scheduling and file system."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Introduction of Operating System",
+      "hours": 9,
+      "topics": [
+        "Operating system Components and its services",
+        "Classification: Batch system, Time sharing, Real Time System, Multiprocessor, Multiuser, Multiprocess, Multithreaded",
+        "OS Structure: Layered structure, Reentrant Kernels, Monolithic and Microkernel Systems",
+        "System Calls",
+        "Elementary Linux commands and Shell Scripting"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Process Scheduling and Resource Management",
+      "hours": 9,
+      "topics": [
+        "Process States, State Transition Diagram",
+        "Schedulers, Process Control Block (PCB)",
+        "Threads and their management",
+        "CPU Scheduling: Concepts, Performance Criteria, Scheduling Algorithms",
+        "Deadlock: System model, characterization, Prevention, Avoidance and detection, Recovery"
+      ]
+    },
+    {
+      "unit_no": 3,
+      "title": "Concurrent Processes",
+      "hours": 9,
+      "topics": [
+        "Principle of Concurrency",
+        "Critical Section Problem, Mutual Exclusion",
+        "Dekker's solution, Peterson's solution",
+        "Semaphores, Monitors, Test and Set operation",
+        "Classical Problems: Producer/Consumer, Reader Writer, Dining Philosopher, Sleeping Barber",
+        "Inter Process Communication models (IPC)"
+      ]
+    },
+    {
+      "unit_no": 4,
+      "title": "Memory Management",
+      "hours": 9,
+      "topics": [
+        "Basic bare machine, Resident monitor",
+        "Multiprogramming with fixed partitions and variable partitions",
+        "Protection schemes, Paging, Segmentation, Paged segmentation",
+        "Virtual memory concepts, Demand paging",
+        "Performance of demand paging",
+        "Page replacement algorithms",
+        "Thrashing"
+      ]
+    },
+    {
+      "unit_no": 5,
+      "title": "I/O Management and Disk Scheduling",
+      "hours": 9,
+      "topics": [
+        "File Systems and I/O Management of Windows and Linux",
+        "Disk storage structure and disk scheduling algorithms",
+        "RAID",
+        "Case Study: Introduction to Android and Mac Operating System",
+        "The Evolution of Mobile Operating Systems: iOS vs Android"
+      ]
+    }
+  ],
+
+  "textbooks": [
+    "Silberschatz, Galvin and Gagne - Operating Systems Concepts, Wiley",
+    "Harvey M Dietel - An Introduction to Operating System, Pearson Education",
+    "William Stallings - Operating Systems: Internals and Design Principles, 6th Edition, Pearson Education"
+  ],
+
+  "reference_books": [
+    "Sibsankar Halder and Alex A Aravind - Operating Systems, Pearson Education",
+    "D M Dhamdhere - Operating Systems: A Concept based Approach, 2nd Edition, TMH",
+    "Andrew S. Tanenbaum and Herbert Bros - Modern Operating Systems (4th Edition), Pearson"
+  ]
+}

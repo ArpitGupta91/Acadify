@@ -1,0 +1,118 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "3rd Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "MA105L",
+  "course_name": "Probability and Statistics",
+  "L": 3, "T": 0, "P": 0, "credits": 3,
+  "type": "Lecture",
+  "category": "Basic Science (BS)",
+  "BOS": "ASH",
+  "prerequisite": "X+2 (12th standard mathematics)",
+  "total_lecture_hours": 45,
+
+  "marks": {
+    "MSE1": 30, "MSE2": 30,
+    "CA1": 6, "CA2": 6, "CA4_ATT": 3,
+    "total_MSE": 60, "total_CA": 15,
+    "ESE": 75, "total": 150
+  },
+
+  "course_objectives": [
+    "To familiarize the graduate engineers with the concept of Statistics and Probability.",
+    "To analyze practical/real life problems and solve them in scientific manner."
+  ],
+
+  "course_outcomes": [
+    "CO1: Employ the concept of measure central tendency and regression analysis.",
+    "CO2: Apply knowledge of probability on distribution function.",
+    "CO3: Apply the concept of probability density function and normal distribution.",
+    "CO4: Apply the concept of random variable and time series.",
+    "CO5: Employ the knowledge of hypothesis by means of Chi-square and ANOVA test."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Basic Statistics",
+      "hours": 9,
+      "topics": [
+        "Introduction to Descriptive Statistics",
+        "Measure of Central Tendency",
+        "Histogram in sampling",
+        "Method of least square (basic concept)",
+        "Fitting of Straight line and exponential curve",
+        "Correlation, Rank correlation and Regression Analysis"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Probability I",
+      "hours": 9,
+      "topics": [
+        "Probability, Law of total Probability",
+        "Conditional Probability, Baye's Theorem",
+        "Discrete Random Variable",
+        "Probability Mass function",
+        "Binomial Distribution",
+        "Poisson Distribution",
+        "Introduction to confusion matrix"
+      ]
+    },
+    {
+      "unit_no": 3,
+      "title": "Probability II",
+      "hours": 9,
+      "topics": [
+        "Continuous Random Variable",
+        "Probability density function",
+        "Properties of Probability density function",
+        "Expectation and variance",
+        "Normal Distribution and its applications"
+      ]
+    },
+    {
+      "unit_no": 4,
+      "title": "Bivariate Random Variable and Time Series",
+      "hours": 9,
+      "topics": [
+        "Introduction to two dimensional random variable",
+        "Joint probability density function and its properties",
+        "Marginal probability distribution",
+        "Introduction to Time series",
+        "Component of time series",
+        "Measure of trend: Graphic method, method of Averages"
+      ]
+    },
+    {
+      "unit_no": 5,
+      "title": "Sampling Theory",
+      "hours": 9,
+      "topics": [
+        "Introduction to Inferential Statistics",
+        "Testing of Hypothesis: Introduction",
+        "Sampling Theory (Small and Large)",
+        "Hypothesis, Null hypothesis, Alternative hypothesis",
+        "Testing a Hypothesis, Level of significance",
+        "Confidence limits, t-test",
+        "Chi-square test",
+        "One way analysis of variance (ANOVA)"
+      ]
+    }
+  ],
+
+  "textbooks": [
+    "B. V. Ramana - Higher Engineering Mathematics, McGraw-Hill, 2017",
+    "B. S. Grewal - Higher Engineering Mathematics, Khanna Publisher, 2017",
+    "R K. Jain & S R K. Iyenger - Advance Engineering Mathematics, Narosa Publishing House 2002",
+    "S. C. Gupta & V. K. Kapoor - Fundamental of Mathematical Statistics, Sultan Chand & Sons"
+  ],
+
+  "reference_books": [
+    "Seymour Lipschutz, John Schiller - Introduction to Probability and Statistics, McGraw Hill",
+    "Peter V. O'Neil - Advance Engineering Mathematics, Thomson (Cengage) Learning, 2007",
+    "TKV Iyenger, B. Krishna Gandhi - Probability and Statistics, S. Chand Publishing House",
+    "E. Kreyszig - Advance Engineering Mathematics, John Wiley & Sons, 2005"
+  ]
+}

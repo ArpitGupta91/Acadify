@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIET CollegeAI Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle menu">☰</button>
+      <div class="brand">KIET CollegeAI</div>
+    </div>
+    <div class="navbar-center">B.Tech CSE/CS | Even Semester 2025-26</div>
+    <div class="navbar-right">
+      <span id="connectionDot" class="status-dot offline"></span>
+      <span id="connectionText">Offline</span>
+    </div>
+  </header>
+
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <div class="app-layout">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-logo-area">
+        <div class="sidebar-logo">🤖</div>
+        <div>
+          <h2>CollegeAI Assistant</h2>
+          <p>KIET Academic Helper</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="sidebar-item active" data-view="chat">💬 Chat</button>
+        <button class="sidebar-item" data-view="exam">📅 Exam Schedule</button>
+        <button class="sidebar-item" data-view="holidays">🗓️ Holidays</button>
+        <button class="sidebar-item" data-view="subjects">📚 Subjects</button>
+        <button class="sidebar-item" data-view="attendance">📊 Attendance</button>
+        <button class="sidebar-item" data-view="cgpa">🎯 CGPA</button>
+      </nav>
+
+      <div class="branch-badge">CSE / CS Branch Only 🔒</div>
+    </aside>
+
+    <main class="main-content">
+      <section id="view-chat" class="view active">
+        <div class="chat-intro card">
+          <p>
+            👋 Hello! I'm CollegeAI, your academic assistant at KIET.<br />
+            I can help you with:<br />
+            • 📅 Exam dates and schedules<br />
+            • 📚 Subject syllabus and topics<br />
+            • 🎯 Marks and credit structure<br />
+            • 🗓️ Holidays and important dates<br />
+            • 📊 Attendance calculations<br />
+            Note: I serve CSE/CS branch students only.
+          </p>
+        </div>
+
+        <div id="suggestionGrid" class="suggestion-grid">
+          <button class="suggestion-chip">📅 When is MSE1?</button>
+          <button class="suggestion-chip">📚 Syllabus of DAA?</button>
+          <button class="suggestion-chip">🗓️ When is Holi holiday?</button>
+          <button class="suggestion-chip">📊 How many classes needed for 75%?</button>
+          <button class="suggestion-chip">🎯 Subjects in 4th semester?</button>
+          <button class="suggestion-chip">💡 Marks for Computer Networks?</button>
+        </div>
+
+        <div id="chatContainer" class="chat-container"></div>
+
+        <div id="typingIndicator" class="typing-indicator hidden">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="input-area">
+          <input id="chatInput" type="text" placeholder="Ask about your syllabus, exams, holidays..." />
+          <button id="voiceBtn" class="icon-btn" title="Voice input (UI only)">🎙️</button>
+          <button id="sendBtn" class="send-btn" title="Send">🛫</button>
+        </div>
+      </section>
+
+      <section id="view-exam" class="view">
+        <h2>Exam Schedule</h2>
+        <div id="examCards" class="exam-grid"></div>
+        <div class="timeline card">
+          <h3>Important Timeline</h3>
+          <div id="timelineTrack" class="timeline-track"></div>
+        </div>
+      </section>
+
+      <section id="view-holidays" class="view">
+        <h2>Holidays</h2>
+        <div class="card holidays-toolbar">
+          <input id="holidaySearch" type="text" placeholder="Search holiday by name or date" />
+          <div id="monthFilters" class="month-filter-row">
+            <button class="month-filter-btn active" data-month="all">All</button>
+            <button class="month-filter-btn" data-month="jan">Jan</button>
+            <button class="month-filter-btn" data-month="feb">Feb</button>
+            <button class="month-filter-btn" data-month="mar">Mar</button>
+            <button class="month-filter-btn" data-month="apr">Apr</button>
+            <button class="month-filter-btn" data-month="may">May</button>
+            <button class="month-filter-btn" data-month="jun">Jun</button>
+          </div>
+        </div>
+        <p id="holidayCount" class="muted-text"></p>
+        <div id="holidayGrid" class="holiday-grid"></div>
+      </section>
+
+      <section id="view-subjects" class="view">
+        <h2>Subjects</h2>
+        <div class="semester-toggle">
+          <button id="sem3Btn" class="semester-btn active" data-semester="3">3rd Semester</button>
+          <button id="sem4Btn" class="semester-btn" data-semester="4">4th Semester</button>
+        </div>
+        <div id="subjectGrid" class="subject-grid"></div>
+      </section>
+
+      <section id="view-attendance" class="view">
+        <div class="card calculator-card">
+          <h2>📊 Attendance Calculator</h2>
+          <p>Minimum 75% required to appear in ESE</p>
+          <label>Total Classes Conducted</label>
+          <input id="attendanceTotal" type="number" min="1" />
+          <label>Classes You Attended</label>
+          <input id="attendanceAttended" type="number" min="0" />
+          <button id="attendanceCalcBtn" class="send-btn">Calculate</button>
+        </div>
+        <div id="attendanceResult" class="result-card hidden"></div>
+      </section>
+
+      <section id="view-cgpa" class="view">
+        <div class="card calculator-card">
+          <h2>🎯 CGPA Calculator</h2>
+          <p>Based on KIET 10-point grading scale</p>
+          <div class="grade-reference">
+            O=10 | A+=9 | A=8 | B+=7 | B=6 | C=5 | P=4 | F=0
+          </div>
+
+          <div class="actions-row">
+            <button id="addSubjectBtn" class="send-btn">+ Add Subject</button>
+            <button id="autofillSem3Btn" class="icon-btn">Auto-fill 3rd Sem</button>
+            <button id="autofillSem4Btn" class="icon-btn">Auto-fill 4th Sem</button>
+          </div>
+
+          <div id="cgpaRows" class="cgpa-rows"></div>
+          <button id="cgpaCalcBtn" class="send-btn">Calculate CGPA</button>
+        </div>
+        <div id="cgpaResult" class="result-card hidden"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="subjectModalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Syllabus</h3>
+        <button id="closeModalBtn" class="icon-btn">✖</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <nav class="mobile-bottom-nav">
+    <button class="mobile-nav-item active" data-view="chat">💬</button>
+    <button class="mobile-nav-item" data-view="exam">📅</button>
+    <button class="mobile-nav-item" data-view="holidays">🗓️</button>
+    <button class="mobile-nav-item" data-view="subjects">📚</button>
+    <button class="mobile-nav-item" data-view="attendance">📊</button>
+    <button class="mobile-nav-item" data-view="cgpa">🎯</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

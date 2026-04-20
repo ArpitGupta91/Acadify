@@ -1,0 +1,72 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "4th Semester (B.Tech II Year)",
+  "session": "2025-26",
+  "total_hours_per_week": 32,
+  "total_credits": 25,
+  "total_marks": 1250,
+
+  "WARNING": "This data is ONLY for CSE and CS branch. Not applicable for CSE-AI, CSE-AIML, IT, CSIT branches.",
+
+  "course_summary": [
+    {"sr": 1,  "code": "CS401L",  "name": "Design and Analysis of Algorithms",       "type": "Lecture",   "L":3,"T":0,"P":0, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 2,  "code": "IT302L",  "name": "Computer Networks",                       "type": "Lecture",   "L":3,"T":0,"P":0, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 3,  "code": "HS112L",  "name": "Universal Human Values",                  "type": "Lecture",   "L":3,"T":0,"P":0, "credits":3, "total_marks":150, "category":"Value Added"},
+    {"sr": 4,  "code": "HS113L",  "name": "Aptitude-2",                              "type": "Lecture",   "L":1,"T":0,"P":0, "credits":1, "total_marks":50,  "category":"AEC"},
+    {"sr": 5,  "code": "HS114L",  "name": "Soft Skills Essentials-2",                "type": "Lecture",   "L":1,"T":0,"P":0, "credits":"NC","total_marks":"NC","category":"AEC"},
+    {"sr": 6,  "code": "IT202B",  "name": "Data Analytics",                          "type": "Blended",   "L":2,"T":0,"P":2, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 7,  "code": "CS303B",  "name": "ANN and Machine Learning",                "type": "Blended",   "L":2,"T":0,"P":2, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 8,  "code": "CS208B",  "name": "Web Technology",                          "type": "Blended",   "L":2,"T":0,"P":2, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 9,  "code": "PE-I",    "name": "Professional Elective-1",                 "type": "Blended",   "L":3,"T":0,"P":2, "credits":4, "total_marks":200, "category":"Major Core/SEC"},
+    {"sr": 10, "code": "CS401P",  "name": "Design and Analysis of Algorithms Lab",   "type": "Practical", "L":0,"T":0,"P":2, "credits":1, "total_marks":50,  "category":"Major Core"},
+    {"sr": 11, "code": "IT302P",  "name": "Computer Networks Lab",                   "type": "Practical", "L":0,"T":0,"P":2, "credits":1, "total_marks":50,  "category":"Major Core"}
+  ],
+
+  "professional_elective_options": {
+    "note": "Students choose ONE from the following options for PE-1 in 4th Semester",
+    "options": [
+      {
+        "elective_name": "Full Stack Product Engineering with AI",
+        "powered_by": "Xebia",
+        "course_code": "CS318E",
+        "course_name": "Frontend Engineering with React & Next",
+        "BOS": "CSE"
+      },
+      {
+        "elective_name": "Next-Gen AI: From Models to Agents",
+        "powered_by": "Xebia",
+        "course_code": "CS307E",
+        "course_name": "Intelligent Systems with Text & Vision API",
+        "BOS": "CSE"
+      },
+      {
+        "elective_name": "DevOps and Autonomous Engineering",
+        "powered_by": "Xebia",
+        "course_code": "CS304E",
+        "course_name": "DevOps Foundations & Version Control",
+        "BOS": "CSE"
+      },
+      {
+        "elective_name": "Data Engineering",
+        "powered_by": "AWS",
+        "course_code": "CS335E",
+        "course_name": "AWS Foundations & Data Engineering",
+        "BOS": "CSE(AI) & CSE(AIML)"
+      },
+      {
+        "elective_name": "Applied Apple Technologies: Swift, XCode & iOS Development",
+        "powered_by": "Apple",
+        "course_code": "CS321E",
+        "course_name": "Foundation of iOS App Development",
+        "BOS": "CSE"
+      },
+      {
+        "elective_name": "Cyber Security",
+        "powered_by": "NSDC",
+        "course_code": "IT306E",
+        "course_name": "Microsoft Azure Fundamentals",
+        "BOS": "CSIT"
+      }
+    ]
+  }
+}

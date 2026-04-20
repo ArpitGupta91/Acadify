@@ -1,0 +1,88 @@
+{
+  "document": "Quick Reference FAQ - KIET CSE/CS Branch",
+  "branch": "CSE / CS only",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "frequently_asked_questions": [
+    {
+      "q": "What subjects are in 3rd semester for CSE/CS?",
+      "a": "3rd Semester subjects: Database Systems (IT301L), Operating System (CS206L), OOP using Java (CS301L), Probability & Statistics (MA105L), Constitution of India (HS109L - NC), Aptitude-1 (HS110L), Soft Skills Essentials-1 (HS111L - NC), Advance Data Structure (CS302B - Blended), Artificial Intelligence and Its Applications (CS205B - Blended), and labs: DB Systems Lab (IT301P), OS Lab (CS206P), Java Lab (CS301P), Social Internship Assessment (IT105P)."
+    },
+    {
+      "q": "What subjects are in 4th semester for CSE/CS?",
+      "a": "4th Semester subjects: Design and Analysis of Algorithms (CS401L), Computer Networks (IT302L), Universal Human Values (HS112L), Aptitude-2 (HS113L), Soft Skills Essentials-2 (HS114L - NC), Data Analytics (IT202B - Blended), ANN and Machine Learning (CS303B - Blended), Web Technology (CS208B - Blended), Professional Elective-1 (CS318E/CS307E/CS304E/CS335E/CS321E/IT306E), and labs: DAA Lab (CS401P), Computer Networks Lab (IT302P)."
+    },
+    {
+      "q": "How many credits are in 3rd semester?",
+      "a": "Total credits in 3rd Semester = 25. Total marks = 1250."
+    },
+    {
+      "q": "How many credits are in 4th semester?",
+      "a": "Total credits in 4th Semester = 25. Total marks = 1250."
+    },
+    {
+      "q": "What is the marking scheme for theory subjects?",
+      "a": "For 150-mark subjects: MSE1=30, MSE2=30 (Total MSE=60), CA1=6, CA2=6, CA3(Attendance)=3 (Total CA=15), ESE=75. Total=150. For 200-mark blended subjects: MSE1=40, MSE2=40 (Total MSE=80), CA1=8, CA2=8, CA3(Attendance)=4 (Total CA=20), ESE=100. Total=200."
+    },
+    {
+      "q": "What is the marking scheme for lab subjects?",
+      "a": "For 50-mark lab subjects: CA1=12, CA2=13 (Total CA=25), ESE=25. Total=50."
+    },
+    {
+      "q": "What is the attendance requirement?",
+      "a": "Minimum 75% attendance is required. Students with less than 75% attendance are detained and NOT allowed to appear in the End Semester Examination (ESE)."
+    },
+    {
+      "q": "What is the syllabus of Database Systems?",
+      "a": "Database Systems (IT301L, 3rd Sem): Unit 1 - Introduction to Database System & ER Model, Unit 2 - Relational Data Model & SQL, Unit 3 - Database Design & Normalization (1NF, 2NF, 3NF, BCNF), Unit 4 - Transaction Processing & Concurrency Control, Unit 5 - Database Recovery Techniques & PL/SQL. Total 45 hours."
+    },
+    {
+      "q": "What is the syllabus of Operating System?",
+      "a": "Operating System (CS206L, 3rd Sem): Unit 1 - OS Introduction & Linux commands, Unit 2 - Process Scheduling, CPU Scheduling, Deadlock, Unit 3 - Concurrent Processes (Semaphores, Critical Section, Classical Problems), Unit 4 - Memory Management (Paging, Virtual Memory), Unit 5 - I/O Management & Disk Scheduling. Total 45 hours."
+    },
+    {
+      "q": "What is the syllabus of Design and Analysis of Algorithms?",
+      "a": "DAA (CS401L, 4th Sem): Unit 1 - Sorting in Linear Time & Recurrence Relations, Unit 2 - Greedy Algorithms (Kruskal, Prim, Dijkstra, Bellman Ford), Unit 3 - Dynamic Programming (Knapsack, LCS, Floyd-Warshall), Unit 4 - Backtracking & Branch and Bound (N-Queen, TSP), Unit 5 - String Matching & NP-Completeness. Total 45 hours."
+    },
+    {
+      "q": "What is the syllabus of Computer Networks?",
+      "a": "Computer Networks (IT302L, 4th Sem): Unit 1 - Introduction & Physical Layer (OSI, TCP/IP, topologies), Unit 2 - Data Link Layer (Ethernet, MAC protocols, CSMA/CD), Unit 3 - Network Layer (IP, IPv6, Routing: RIP, OSPF, BGP), Unit 4 - Transport Layer (TCP, UDP, Congestion Control), Unit 5 - Application Layer (DNS, HTTP, FTP, Cryptography). Total 45 hours."
+    },
+    {
+      "q": "What is the syllabus of Data Analytics?",
+      "a": "Data Analytics (IT202B, 4th Sem): Unit 1 - Introduction to Data Analytics & DALC, Unit 2 - Data Cleaning & Preprocessing (Pandas, NumPy), Unit 3 - EDA & Visualization (Power BI, Tableau), Unit 4 - ML for Data Analytics (Decision Trees, K-Means, PCA), Unit 5 - Big Data (Hadoop, Spark, MapReduce). Total 60 hours."
+    },
+    {
+      "q": "What is the syllabus of ANN and Machine Learning?",
+      "a": "ANN & ML (CS303B, 4th Sem): Unit 1 - Basics of ML (KNN, SVM, Linear Regression), Unit 2 - Practical ML Algorithms (Feature Engineering, PCA, DBSCAN), Unit 3 - Ensemble Learning (Random Forest, Grid Search, AutoML), Unit 4 - Fundamentals of ANN (MLP, RBF, Digit Recognition). Total 60 hours."
+    },
+    {
+      "q": "What are the Professional Elective options in 4th semester?",
+      "a": "6 PE-1 options for 4th Sem: (1) CS318E - Frontend Engineering with React & Next (Full Stack AI - Xebia), (2) CS307E - Intelligent Systems with Text & Vision API (Next-Gen AI - Xebia), (3) CS304E - DevOps Foundations & Version Control (DevOps - Xebia), (4) CS335E - AWS Foundations & Data Engineering (Data Engineering - AWS), (5) CS321E - Foundation of iOS App Development (Apple), (6) IT306E - Microsoft Azure Fundamentals (Cyber Security - NSDC). Student selects ONE."
+    },
+    {
+      "q": "What is the credits for Advance Data Structure?",
+      "a": "Advance Data Structure (CS302B) carries 4 credits (L:3, T:0, P:2). Total marks = 200 (MSE1=40, MSE2=40, CA=20, ESE=100)."
+    },
+    {
+      "q": "What is the credits for AI course?",
+      "a": "Artificial Intelligence and Its Applications (CS205B) carries 4 credits (L:3, T:0, P:2). Total marks = 200 (MSE1=40, MSE2=40, CA=20, ESE=100)."
+    },
+    {
+      "q": "Is Constitution of India graded?",
+      "a": "No. Constitution of India (HS109L) is a Non-Credit (NC) subject. It is evaluated but does not count towards CGPA. Evaluation: MSE2=25 marks, ESE=25 marks."
+    },
+    {
+      "q": "Is Soft Skills a credited subject?",
+      "a": "No. Soft Skills Essentials-1 (HS111L, 3rd Sem) and Soft Skills Essentials-2 (HS114L, 4th Sem) are both Non-Credit (NC) subjects."
+    },
+    {
+      "q": "What is CGPA formula?",
+      "a": "CGPA = Sum of (Grade Points × Credits for each subject) / Sum of Total Credits. Grade scale: O=10, A+=9, A=8, B+=7, B=6, C=5, P=4, F=0."
+    },
+    {
+      "q": "How many classes do I need to attend to avoid detention?",
+      "a": "You need minimum 75% attendance. Formula: If total classes = N and attended = A, you are safe if A/N >= 0.75. To find how many more you must attend: solve (A+x)/(N+x) >= 0.75."
+    }
+  ]
+}

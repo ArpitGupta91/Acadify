@@ -1,0 +1,26 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "3rd Semester (B.Tech II Year)",
+  "session": "2025-26",
+  "total_hours_per_week": 32,
+  "total_credits": 25,
+  "total_marks": 1250,
+
+  "WARNING": "This data is ONLY for CSE and CS branch. Not applicable for CSE-AI, CSE-AIML, IT, CSIT branches.",
+
+  "course_summary": [
+    {"sr": 1,  "code": "IT301L",  "name": "Database Systems",                        "type": "Lecture",   "L":3,"T":0,"P":0, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 2,  "code": "CS206L",  "name": "Operating System",                        "type": "Lecture",   "L":3,"T":0,"P":0, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 3,  "code": "CS301L",  "name": "Object Oriented Programming using Java",  "type": "Lecture",   "L":3,"T":0,"P":0, "credits":3, "total_marks":150, "category":"Major Core"},
+    {"sr": 4,  "code": "MA105L",  "name": "Probability and Statistics",              "type": "Lecture",   "L":3,"T":0,"P":0, "credits":3, "total_marks":150, "category":"Basic Science"},
+    {"sr": 5,  "code": "HS109L",  "name": "Constitution of India",                   "type": "Lecture",   "L":2,"T":0,"P":0, "credits":"NC","total_marks":"NC","category":"Value Added"},
+    {"sr": 6,  "code": "HS110L",  "name": "Aptitude-1",                              "type": "Lecture",   "L":1,"T":0,"P":0, "credits":1, "total_marks":50,  "category":"AEC"},
+    {"sr": 7,  "code": "HS111L",  "name": "Soft Skills Essentials-1",                "type": "Lecture",   "L":1,"T":0,"P":0, "credits":"NC","total_marks":"NC","category":"AEC"},
+    {"sr": 8,  "code": "CS302B",  "name": "Advance Data Structure",                  "type": "Blended",   "L":3,"T":0,"P":2, "credits":4, "total_marks":200, "category":"Major Core"},
+    {"sr": 9,  "code": "CS205B",  "name": "Artificial Intelligence and Its Applications","type":"Blended","L":3,"T":0,"P":2, "credits":4, "total_marks":200, "category":"Major Core"},
+    {"sr": 10, "code": "IT301P",  "name": "Database Systems Lab",                    "type": "Practical", "L":0,"T":0,"P":2, "credits":1, "total_marks":50,  "category":"Major Core"},
+    {"sr": 11, "code": "CS206P",  "name": "Operating System Lab",                    "type": "Practical", "L":0,"T":0,"P":2, "credits":1, "total_marks":50,  "category":"Major Core"},
+    {"sr": 12, "code": "CS301P",  "name": "Object Oriented Programming using Java Lab","type":"Practical", "L":0,"T":0,"P":2, "credits":1, "total_marks":50,  "category":"Major Core"},
+    {"sr": 13, "code": "IT105P",  "name": "Social Internship Assessment",            "type": "Practical", "L":0,"T":0,"P":0, "credits":1, "total_marks":50,  "category":"Summer Internship"}
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "branch": "CSE / CS only",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+  "document": "Non-Credit (NC) and AEC Courses - 3rd and 4th Semester",
+
+  "courses": [
+    {
+      "course_code": "HS109L",
+      "course_name": "Constitution of India",
+      "semester": "3rd",
+      "L": 2, "T": 0, "P": 0,
+      "credits": "NC",
+      "category": "Value Added (MC)",
+      "BOS": "ASH",
+      "prerequisite": "NA",
+      "total_lecture_hours": 30,
+      "marks": {"MSE": 25, "CA": "NA", "ESE": 25, "total": "NC"},
+      "note": "Non-Credit subject. MSE2 = 25 marks only. ESE = 25 marks.",
+      "units": [
+        {"unit_no":1,"title":"Basic Information about Indian Constitution","hours":8,"topics":["Meaning of constitution law and constitutionalism","Historical Background of Constituent Assembly","Government of India Act of 1935 and Indian Independence Act of 1947","Enforcement of the Constitution, Salient Features","Preamble, Fundamental Rights, Fundamental Duties","Directive Principles of State Policy","Parliamentary System, Federal System, Centre-State Relations","Amendment procedure, Emergency Provisions","Local Self Government - Constitutional Scheme in India"]},
+        {"unit_no":2,"title":"Union Executive and State Executive","hours":8,"topics":["Powers of Indian Parliament, Rajya Sabha, Lok Sabha","Powers and Functions of the President","Powers and Functions of the Prime Minister","Independence of Supreme Court, Judicial Review, PIL","Lok Pal, Lok Ayukta","State Executives: Governor, Chief Minister, State Legislature, High Court"]},
+        {"unit_no":3,"title":"Basic Information about Legal System","hours":7,"topics":["Sources of Law and the Court Structure","Acts of Parliament, Common Law, Case law","Court System in India (District Court, High Courts, Supreme Court)","Arbitration as alternative dispute resolution","Contract law, Tort, Law at workplace"]},
+        {"unit_no":4,"title":"Election provisions, Emergency provisions, Amendment of the constitution","hours":7,"topics":["Election Commission of India - composition, powers, electoral process","Types of emergency: grounds, procedure, duration, effects","Amendment of the constitution: meaning, procedure and limitations"]}
+      ]
+    },
+    {
+      "course_code": "HS110L",
+      "course_name": "Aptitude-1",
+      "semester": "3rd",
+      "L": 1, "T": 0, "P": 0,
+      "credits": 1,
+      "category": "AEC (HS)",
+      "BOS": "ASH",
+      "prerequisite": "NA",
+      "total_lecture_hours": 15,
+      "marks": {"CA1":10,"CA2":10,"CA3_ATT":5,"ESE":25,"total":50},
+      "note": "No MSE conducted for this subject.",
+      "units": [
+        {"unit_no":1,"title":"Series, Coding and Decoding","hours":4,"topics":["Importance and overview of Quantitative Aptitude","Number Series, Letter Series, Analogies","Coding and Decoding"]},
+        {"unit_no":2,"title":"Data Arrangement","hours":4,"topics":["Ranking and Order, Direction Sense","Linear and Circular sitting arrangement"]},
+        {"unit_no":3,"title":"Blood Relation and Puzzles","hours":3,"topics":["Basic concepts of blood relationships","Conversation based blood relationships","Family Tree based problems","Coded relationships and related puzzles"]},
+        {"unit_no":4,"title":"Critical and Non Verbal Reasoning","hours":4,"topics":["Statement arguments, course of action","Classification and grouping of images, Figure series","Mirror image, Water image, Paper cutting, Paper folding","Embedded figures"]}
+      ]
+    },
+    {
+      "course_code": "HS111L",
+      "course_name": "Soft Skills Essentials-1",
+      "semester": "3rd",
+      "L": 1, "T": 0, "P": 0,
+      "credits": "NC",
+      "category": "AEC (HS)",
+      "BOS": "ASH",
+      "total_lecture_hours": 15,
+      "marks": {"CA1":10,"CA2":10,"CA3_ATT":5,"ESE":25,"total":50},
+      "note": "Non-Credit subject",
+      "units": [
+        {"unit_no":1,"title":"Foundation of Communication and Self-Awareness","hours":5,"topics":["British Council-English Score Test","Team Presentations on Change Management Models","Presentations on Personality Profiling for professional growth"]},
+        {"unit_no":2,"title":"Verbal Communication and Clarity","hours":4,"topics":["Pronunciation Drill 1 & 2","Elevator Pitch Practice Session 1 & 2"]},
+        {"unit_no":3,"title":"Professionalism and Workplace Readiness","hours":6,"topics":["Professional Grooming and Etiquette","Group Discussion (General Topics)","Panel Discussion on workplace scenarios using caselets"]}
+      ]
+    },
+    {
+      "course_code": "HS112L",
+      "course_name": "Universal Human Values",
+      "semester": "4th",
+      "L": 3, "T": 0, "P": 0,
+      "credits": 3,
+      "category": "Value Added (MC)",
+      "BOS": "ASH",
+      "prerequisite": "NA",
+      "total_lecture_hours": 45,
+      "marks": {"MSE1":30,"MSE2":30,"CA1":6,"CA2":6,"CA3_ATT":3,"total_MSE":60,"total_CA":15,"ESE":75,"total":150},
+      "units": [
+        {"unit_no":1,"title":"Introduction to Value Education","hours":10,"topics":["Understanding the need, guidelines, content, and process for Value Education","Natural Acceptance and Experiential Validation","Continuous Happiness and Prosperity","Right understanding, Relationship, and Physical Facilities","Understanding Happiness and Prosperity - critical appraisal of current scenario"]},
+        {"unit_no":2,"title":"Understanding Harmony in the Human Being","hours":10,"topics":["Human being as co-existence of sentient I and material Body","Needs of Self (I) and Body: Sukh and Suvidha","Body as instrument of I","Sanyam and Swasthya; correct appraisal of Physical needs"]},
+        {"unit_no":3,"title":"Understanding Harmony in the Family and Society","hours":10,"topics":["Harmony in the Family as basic unit of human interaction","Trust (Vishwas) and Respect (Samman) as foundational values","Undivided Society (Akhand Samaj), Universal Order (Sarvabhaum Vyawastha)"]},
+        {"unit_no":4,"title":"Understanding Harmony in Nature and Existence","hours":9,"topics":["Whole existence as Co-existence","Harmony in Nature: Inter connectedness, mutual fulfillment","Recyclability and self-regulation in nature","Existence as Co-existence (Sah-astitva)"]},
+        {"unit_no":5,"title":"Implications on Professional Ethics","hours":6,"topics":["Natural acceptance of human values","Definiteness of Ethical Human Conduct","Basis for Humanistic Education","Humanistic Universal Order","Competence in Professional Ethics"]}
+      ],
+      "textbook": "R R Gaur, R Asthana, G P Bagaria - A Foundation Course in Human Values and Professional Ethics (2nd Revised Edition), Excel Books, New Delhi. ISBN 978-93-87034-47-1"
+    },
+    {
+      "course_code": "HS113L",
+      "course_name": "Aptitude-2",
+      "semester": "4th",
+      "L": 1, "T": 0, "P": 0,
+      "credits": 1,
+      "category": "AEC (HS)",
+      "BOS": "ASH",
+      "prerequisite": "NA",
+      "total_lecture_hours": 15,
+      "marks": {"CA1":10,"CA2":10,"CA3_ATT":5,"ESE":25,"total":50},
+      "note": "No MSE conducted for this subject.",
+      "units": [
+        {"unit_no":1,"title":"Analytical Reasoning & Logical Puzzles","hours":4,"topics":["Concept and Relation of Cube and Cuboids","Cut the cube in different layers","Problems related with open and closed dice"]},
+        {"unit_no":2,"title":"Syllogism","hours":3,"topics":["Understanding of Venn diagram","Problems related with Venn diagram","Statement and Conclusion","Syllogism and reverse syllogism"]},
+        {"unit_no":3,"title":"Clock and Calendar","hours":4,"topics":["Concept and Relation of angle and time","Overtaking, overlapping, right-angle and straight Angle","Error in clock (faster and slower)","Mirror and Water Image of clock","Normal and Leap Year, Finding Odd days","Finding the day of the week of given date"]},
+        {"unit_no":4,"title":"Data Interpretation and Critical Reasoning","hours":4,"topics":["Tables, Line Graph, Bar Graph, Pi Chart, Mixed Graph","Critical Reasoning: Assumptions, Cause and Effect","Assertion and Reason, Statement and Inference"]}
+      ]
+    },
+    {
+      "course_code": "HS114L",
+      "course_name": "Soft Skills Essentials-2",
+      "semester": "4th",
+      "L": 1, "T": 0, "P": 0,
+      "credits": "NC",
+      "category": "AEC (HS)",
+      "BOS": "ASH",
+      "prerequisite": "Successful completion of Soft Skills Essentials-1 (3rd Semester)",
+      "total_lecture_hours": 15,
+      "marks": {"CA1":10,"CA2":10,"CA3":5,"ESE":25,"total":"NC"},
+      "note": "Non-Credit subject. No MSE conducted.",
+      "units": [
+        {"unit_no":1,"title":"Advanced Communication and Cultural Sensitivity","hours":7,"topics":["Vocabulary Enhancement through Gamification","Story Coining and Presentations","Understanding Cross-Cultural Communication (DEI) using Case Studies","Duo Lingo English Proficiency Tests"]},
+        {"unit_no":2,"title":"Professional Expression and Digital Literacy","hours":4,"topics":["TMAY through Driver's test","Writing Effective Prompts on Various LLMs","Duo Lingo English Proficiency Tests"]},
+        {"unit_no":3,"title":"Interpersonal Effectiveness and Emotional Intelligence","hours":4,"topics":["Negotiation & Persuasion Role Plays","Developing Emotional Intelligence via Scenario-Based Discussions"]}
+      ]
+    }
+  ]
+}

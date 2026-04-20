@@ -1,0 +1,157 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "3rd Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "CS302B",
+  "course_name": "Advance Data Structure",
+  "L": 3, "T": 0, "P": 2, "credits": 4,
+  "type": "Blended",
+  "category": "Major (Core)",
+  "BOS": "CSE",
+  "prerequisite": "Background in mathematics, strong programming skills, fundamental knowledge of data structures and algorithms",
+  "total_lecture_hours": 75,
+
+  "marks": {
+    "MSE1": 40, "MSE2": 40,
+    "CA1": 8, "CA2": 8, "CA3_ATT": 4,
+    "total_MSE": 80, "total_CA": 20,
+    "ESE": 100, "total": 200
+  },
+
+  "course_objectives": [
+    "This course develops a deep understanding of advanced data structures for efficient problem-solving.",
+    "Students will analyze, implement, and apply complex structures like trees, heaps, graphs, and hashing."
+  ],
+
+  "course_outcomes": [
+    "CO1: Analyze algorithms using asymptotic notations and apply the Divide & Conquer technique.",
+    "CO2: Implement hashing techniques with collision resolution strategies.",
+    "CO3: Construct and manipulate tree-based data structures, including BST, AVL, Red-Black, B-Trees, and Huffman coding.",
+    "CO4: Apply graph representations and traversal techniques like BFS, DFS, Connected Components, and Topological Sorting.",
+    "CO5: Utilize advanced data structures such as Binomial Heaps, Tries, Skip Lists, and Splay Trees."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Introduction & Divide and Conquer Technique",
+      "hours": 15,
+      "topics": [
+        "Algorithms, Analyzing algorithms",
+        "Orders of Magnitude: Asymptotic notations (O, Ω, Θ)",
+        "Growth of functions: constant, logarithmic, linear, polynomial, exponential",
+        "Divide & Conquer: Binary search, Merge sort, Quick sort, Randomized quick sort",
+        "Efficiency analysis of sorting"
+      ],
+      "problem_solving": [
+        "Binary Search on sorted array",
+        "Finding starting and ending position in sorted array in O(log n)",
+        "Merge Sort with counting recursive calls",
+        "Count inversions in array",
+        "Quick Sort with last element as pivot",
+        "Randomized Quick Sort",
+        "Maximum subarray using Divide and Conquer",
+        "Kth largest element"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Hashing",
+      "hours": 15,
+      "topics": [
+        "Hash table, Hash function",
+        "Collision resolution: Open hashing (Separate Chaining)",
+        "Closed Hashing: Linear Probing, Quadratic probing, Double Hashing"
+      ],
+      "problem_solving": [
+        "Hash table using separate chaining",
+        "Frequency of distinct elements",
+        "Duplicate elements within distance k",
+        "Two sum using hash set",
+        "Distinct elements in window of size k",
+        "K most frequent elements",
+        "Group anagrams",
+        "Two sum returning indices"
+      ]
+    },
+    {
+      "unit_no": 3,
+      "title": "Trees",
+      "hours": 15,
+      "topics": [
+        "Binary Trees",
+        "Binary Search Trees (BST): insert, delete, search",
+        "Threaded Binary Trees",
+        "Huffman coding",
+        "Balanced Trees: AVL Tree operations (insertion, deletion)"
+      ],
+      "problem_solving": [
+        "Binary tree with in-order, pre-order, post-order traversals",
+        "BST: insert, delete, search with in-order display",
+        "Huffman tree with codes",
+        "AVL Tree with rotations",
+        "Maximum depth of binary tree",
+        "Construct binary tree from preorder and inorder",
+        "Diameter of binary tree",
+        "Lowest Common Ancestor (LCA)"
+      ]
+    },
+    {
+      "unit_no": 4,
+      "title": "Graph",
+      "hours": 15,
+      "topics": [
+        "Graph Terminology",
+        "Sequential and linked Representations: Adjacency Matrices, Adjacency List, Adjacency Multi list",
+        "Graph Traversal: Depth First Search (DFS) and Breadth First Search (BFS)",
+        "Connected Component",
+        "Topological sort"
+      ],
+      "problem_solving": [
+        "Graph using adjacency matrix",
+        "Graph using adjacency list",
+        "DFS traversal",
+        "BFS traversal level by level",
+        "All connected components using DFS/BFS",
+        "Topological sort using Kahn's algorithm (BFS)",
+        "DFS-based topological sort",
+        "Bipartite graph check",
+        "Number of islands in 2D grid"
+      ]
+    },
+    {
+      "unit_no": 5,
+      "title": "Advanced Data Structure",
+      "hours": 15,
+      "topics": [
+        "Binomial Heap and operations",
+        "Trie data structures",
+        "Priority Queue",
+        "Disjoint data structure (Union-Find)"
+      ],
+      "problem_solving": [
+        "Implement and merge binomial heaps",
+        "Extract minimum from binomial heap",
+        "Detect cycle using Union-Find",
+        "Trie: insert and search operations",
+        "Job scheduler using Priority Queue"
+      ]
+    }
+  ],
+
+  "textbooks": [
+    "Cormen, Leiserson, Rivest, Stein - Introduction to Algorithms (3rd ed.), MIT Press, 2009",
+    "Horowitz and Sahani - Fundamentals of Data Structures, Galgotia Publications",
+    "Lipschutz - Data Structures, Schaum's Outline Series, Tata McGraw-hill",
+    "Reema Thareja - Data Structure Using C, Oxford Higher Education",
+    "AK Sharma - Data Structure Using C, Pearson Education India"
+  ],
+
+  "reference_books": [
+    "V. Aho, J. E. Hopcroft, J. D. Ullman - Data Structures and Algorithms (1st ed.), Pearson, 1983",
+    "Dasgupta, Papadimitrou and Vazirani - Algorithms (3rd ed.), McGraw-Hill Education, 2006",
+    "Horowitz, Sahni, Rajasekaran - Computer Algorithms (2nd ed.), Silicon Press, 2007",
+    "Kleinberg and Tardos - Algorithm Design (1st ed.), Pearson, 2005"
+  ]
+}

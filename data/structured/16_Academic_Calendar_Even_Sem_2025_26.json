@@ -1,0 +1,311 @@
+{
+  "college": "KIET Group of Institutions, Delhi-NCR, Ghaziabad",
+  "document": "Academic Calendar - Even Semester (2025-26)",
+  "applicable_to": ["B.Tech (2nd and 4th Semester)", "MCA", "MBA", "M.Tech(CSE)", "M.Pharm (2nd and 4th Semester)", "B.Pharm (4th Semester)"],
+  "total_academic_days": 90,
+
+  "note_on_holidays": "All Saturdays and Sundays are OFF. First Saturday and Third Saturday of every month are also holidays. Any Saturday marked as working in the PDF is treated as a holiday.",
+
+  "semester_key_dates": {
+    "classes_start": "22nd January 2026",
+    "orientation_programme": "22nd January 2026 to 27th January 2026",
+    "last_instructional_day": "9th May 2026",
+    "summer_semester_start": "2nd June 2026",
+    "new_semester_begins": "3rd August 2026"
+  },
+
+  "exam_schedule": {
+    "MSE1": {
+      "full_name": "Mid Semester Examination 1",
+      "detention_list_by_COE": "2nd March 2026",
+      "exam_dates": "9th March 2026 to 14th March 2026",
+      "answer_sheet_evaluation": "20th March 2026 to 24th March 2026",
+      "moderation": "20th March 2026 to 24th March 2026",
+      "grievance_redressal_deadline": "28th March 2026",
+      "marks_upload_ERP_deadline": "31st March 2026"
+    },
+    "MSE2": {
+      "full_name": "Mid Semester Examination 2",
+      "provisional_detention_list": "11th April 2026",
+      "detention_list_by_COE": "17th April 2026",
+      "exam_dates": "20th April 2026 to 25th April 2026",
+      "answer_sheet_evaluation": "1st May 2026",
+      "moderation": "5th May 2026",
+      "grievance_redressal_deadline": "8th May 2026",
+      "marks_upload_ERP_deadline": "11th May 2026"
+    },
+    "ESE": {
+      "full_name": "End Semester Examination",
+      "makeup_exam": "11th May 2026 to 14th May 2026",
+      "detention_list_by_COE": "12th May 2026",
+      "exam_dates": "15th May 2026 to 30th May 2026",
+      "practical_exam": "1st June 2026 to 5th June 2026",
+      "script_showing_to_students": "12th June 2026",
+      "result_publication": "23rd June 2026",
+      "summer_semester_exam": "13th July 2026 to 23rd July 2026",
+      "summer_result_by_COE": "30th July 2026"
+    },
+    "continuous_assessment": {
+      "CA1_upload_deadline": "23rd February 2026 to 28th February 2026",
+      "CA2_upload_deadline": "27th April 2026 to 2nd May 2026",
+      "note": "Applicable for Theory, Blended, and Practical Courses on ERP"
+    }
+  },
+
+  "attendance": {
+    "minimum_percentage": 75,
+    "detention_rule": "Students below 75% attendance are detained and NOT allowed in ESE",
+    "display_schedule": [
+      {"event": "Provisional Detention List CT Exam (Dept Level)", "date": "20th February 2026"},
+      {"event": "Attendance Display to Students (Dept Level)", "date": "14th February 2026"},
+      {"event": "Attendance Display to Students (Dept Level)", "date": "2nd April 2026"},
+      {"event": "Provisional Detention List MSE2 (Dept Level)", "date": "11th April 2026"}
+    ]
+  },
+
+  "months": {
+    "january_2026": {
+      "academic_days": 8,
+      "classes_begin": "22nd January 2026",
+      "holidays": [
+        {"date": "1st January (Thursday)",  "day": "Thursday", "reason": "New Year (before semester)"},
+        {"date": "3rd January (Saturday)",  "day": "Saturday", "reason": "First Saturday - Holiday"},
+        {"date": "4th January (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "10th January (Saturday)", "day": "Saturday", "reason": "2nd Saturday - but all Saturdays OFF"},
+        {"date": "11th January (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "17th January (Saturday)", "day": "Saturday", "reason": "Third Saturday - Holiday"},
+        {"date": "18th January (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "24th January (Saturday)", "day": "Saturday", "reason": "Bondation / 4th Saturday - Holiday"},
+        {"date": "25th January (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "26th January (Monday)",   "day": "Monday",   "reason": "Republic Day - National Holiday"},
+        {"date": "31st January (Saturday)", "day": "Saturday", "reason": "Bondation / 5th Saturday - Holiday"}
+      ],
+      "additional_activities": [
+        "Load Distribution: 5th Jan to 7th Jan 2026",
+        "Finalization of Course Coordinators: 9th Jan 2026",
+        "Meeting of Course Teachers for Semester planning & Lesson Plan preparation: 10th Jan to 13th Jan 2026",
+        "Uploading Lesson Plan on ERP: 14th Jan to 16th Jan 2026",
+        "Bondation: 24th Jan & 31st Jan 2026"
+      ]
+    },
+
+    "february_2026": {
+      "academic_days": 24,
+      "holidays": [
+        {"date": "1st February (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "7th February (Saturday)",  "day": "Saturday", "reason": "First Saturday - Holiday"},
+        {"date": "8th February (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "14th February (Saturday)", "day": "Saturday", "reason": "2nd Saturday - all Saturdays OFF"},
+        {"date": "15th February (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "18th February (Wednesday)","day": "Wednesday","reason": "Shivratri - Holiday"},
+        {"date": "21st February (Saturday)", "day": "Saturday", "reason": "Third Saturday - Holiday"},
+        {"date": "22nd February (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "28th February (Saturday)", "day": "Saturday", "reason": "4th Saturday - Holiday"}
+      ],
+      "academic_activities": [
+        "Departmental CR Meeting 1: 26th Feb to 28th Feb 2026",
+        "Attendance Display to students (Dept Level): 14th Feb 2026",
+        "Provisional Detention List CT Examination (Dept Level): 20th Feb 2026"
+      ],
+      "examination_activities": [
+        "Uploading of CA1 (Theory/Blended/Practical) on ERP: 23rd Feb to 28th Feb 2026"
+      ],
+      "events": [
+        "IGNITE'26: 5th Feb to 6th Feb 2026",
+        "Blood Donation Camp: 10th Feb 2026",
+        "RANN'26: 12th Feb to 14th Feb 2026",
+        "Finalization of Class Representatives: 14th Feb 2026",
+        "SportX Industry Meet: 28th Feb 2026"
+      ]
+    },
+
+    "march_2026": {
+      "academic_days": 21,
+      "holidays": [
+        {"date": "1st March (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "2nd March (Monday)",    "day": "Monday",   "reason": "Holika Dahan - Holiday"},
+        {"date": "3rd March (Tuesday)",   "day": "Tuesday",  "reason": "Holi (in lieu of 4th April 2026)"},
+        {"date": "4th March (Wednesday)", "day": "Wednesday","reason": "Dulhendi (Holi) - Holiday"},
+        {"date": "5th March (Thursday)",  "day": "Thursday", "reason": "Dulhendi (Holi) - Holiday"},
+        {"date": "7th March (Saturday)",  "day": "Saturday", "reason": "First Saturday - Holiday"},
+        {"date": "8th March (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "14th March (Saturday)", "day": "Saturday", "reason": "2nd Saturday - all Saturdays OFF"},
+        {"date": "15th March (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "21st March (Saturday)", "day": "Saturday", "reason": "Third Saturday + Eid-Ul-Fitr - Holiday"},
+        {"date": "22nd March (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "26th March (Thursday)", "day": "Thursday", "reason": "Ram Navami - Holiday"},
+        {"date": "28th March (Saturday)", "day": "Saturday", "reason": "4th Saturday - Holiday"},
+        {"date": "29th March (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"}
+      ],
+      "academic_activities": [
+        "IQAC Academic Audit 1: 9th March to 14th March 2026",
+        "Mid Sem Feedback (Central Level): 23rd March to 25th March 2026",
+        "Mid Semester Result analysis (Dept Level): 24th March to 28th March 2026",
+        "CR Meeting Institute Level: 23rd March to 28th March 2026",
+        "Department Level EPOQUE: 21st March & 28th March 2026"
+      ],
+      "examination_activities": [
+        "Detention List Publication (MSE1) by COE: 2nd March 2026",
+        "MSE1 Examination (Central Level): 9th March to 14th March 2026",
+        "Evaluation of Answer Sheets (MSE1): 20th March to 24th March 2026",
+        "Moderation of Answer Sheets (MSE1): 20th March to 24th March 2026",
+        "Grievance Redressal (MSE1): Till 28th March 2026",
+        "Marks Uploading on ERP (MSE1): Till 31st March 2026"
+      ],
+      "events": [
+        "Technoverse 3.0: 18th March 2026"
+      ]
+    },
+
+    "april_2026": {
+      "academic_days": 25,
+      "holidays": [
+        {"date": "4th April (Saturday)",  "day": "Saturday", "reason": "First Saturday - Holiday (Holi compensatory on 3rd March)"},
+        {"date": "5th April (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "11th April (Saturday)", "day": "Saturday", "reason": "2nd Saturday - all Saturdays OFF"},
+        {"date": "12th April (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "14th April (Tuesday)",  "day": "Tuesday",  "reason": "Dr. B.R. Ambedkar Jayanti / Baisakhi - Holiday"},
+        {"date": "18th April (Saturday)", "day": "Saturday", "reason": "Third Saturday - Holiday"},
+        {"date": "19th April (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "25th April (Saturday)", "day": "Saturday", "reason": "4th Saturday - Holiday"},
+        {"date": "26th April (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"}
+      ],
+      "academic_activities": [
+        "Attendance Display to students (Dept Level): 2nd April 2026",
+        "Departmental CR Meeting 2: 1st April to 3rd April 2026",
+        "Provisional Detention List MSE2 Examination (Dept Level): 11th April 2026",
+        "Detention List Publication (MSE2) by COE: 17th April 2026",
+        "Student Faculty Feedback: 27th April to 9th May 2026",
+        "Curriculum Feedback by all Stakeholders: 27th April to 9th May 2026"
+      ],
+      "examination_activities": [
+        "MSE2 Examinations (Central Level): 20th April to 25th April 2026",
+        "Uploading of CA2 (Theory/Blended/Practical) on ERP: 27th April to 2nd May 2026"
+      ],
+      "events": [
+        "EPOQUE@PRASTUTI'26: 2nd April to 4th April 2026",
+        "TEDxKIET: 10th April 2026",
+        "ICICI-2026 Conference: 24th April to 25th April 2026"
+      ]
+    },
+
+    "may_2026": {
+      "academic_days": 12,
+      "last_instructional_day": "9th May 2026",
+      "holidays": [
+        {"date": "2nd May (Saturday)",  "day": "Saturday", "reason": "First Saturday - Holiday"},
+        {"date": "3rd May (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "9th May (Saturday)",  "day": "Saturday", "reason": "2nd Saturday - all Saturdays OFF"},
+        {"date": "10th May (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "16th May (Saturday)", "day": "Saturday", "reason": "Third Saturday - Holiday"},
+        {"date": "17th May (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "23rd May (Saturday)", "day": "Saturday", "reason": "4th Saturday - Holiday"},
+        {"date": "24th May (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "27th May (Wednesday)","day": "Wednesday","reason": "Eid-Ul-Zuha (Bakrid)* - Holiday"},
+        {"date": "30th May (Saturday)", "day": "Saturday", "reason": "5th Saturday - Holiday"},
+        {"date": "31st May (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"}
+      ],
+      "examination_activities": [
+        "Evaluation of Answer Sheets (MSE2): 1st May 2026",
+        "Moderation of Answer Sheets (MSE2): 5th May 2026",
+        "Grievance Redressal (MSE2): Till 8th May 2026",
+        "Marks Uploading on ERP (MSE2): Till 11th May 2026",
+        "Make-up Examination: 11th May to 14th May 2026",
+        "Detention List Publication (ESE) by COE: 12th May 2026",
+        "End Semester Examination (ESE): 15th May to 30th May 2026",
+        "Registration of Summer Semester: 18th May 2026"
+      ]
+    },
+
+    "june_2026": {
+      "holidays": [
+        {"date": "6th June (Saturday)",  "day": "Saturday", "reason": "First Saturday - Holiday"},
+        {"date": "7th June (Sunday)",    "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "13th June (Saturday)", "day": "Saturday", "reason": "2nd Saturday - all Saturdays OFF"},
+        {"date": "14th June (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "20th June (Saturday)", "day": "Saturday", "reason": "Third Saturday - Holiday"},
+        {"date": "21st June (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"},
+        {"date": "27th June (Saturday)", "day": "Saturday", "reason": "4th Saturday - Holiday"},
+        {"date": "28th June (Sunday)",   "day": "Sunday",   "reason": "Sunday - Holiday"}
+      ],
+      "academic_activities": [
+        "Commencement of Summer Semester: 2nd June to 11th July 2026",
+        "IQAC Academic Audit 2: 8th June to 12th June 2026"
+      ],
+      "examination_activities": [
+        "End Semester Practical Examination: 1st June to 5th June 2026",
+        "Showing Script to students (ESE): 12th June 2026",
+        "Result Publication: 23rd June 2026"
+      ]
+    },
+
+    "july_august_2026": {
+      "activities": [
+        "Commencement of Summer Semester Examination / Even Semester Vacation Exam: 13th July to 23rd July 2026",
+        "Result Publication Summer Semester by COE office: 30th July 2026",
+        "New Semester Beginning: 3rd August 2026"
+      ]
+    }
+  },
+
+  "all_holidays_consolidated": [
+    {"date": "3rd Jan 2026",   "day": "Saturday",  "reason": "First Saturday"},
+    {"date": "17th Jan 2026",  "day": "Saturday",  "reason": "Third Saturday"},
+    {"date": "24th Jan 2026",  "day": "Saturday",  "reason": "Bondation"},
+    {"date": "26th Jan 2026",  "day": "Monday",    "reason": "Republic Day"},
+    {"date": "31st Jan 2026",  "day": "Saturday",  "reason": "Bondation"},
+    {"date": "7th Feb 2026",   "day": "Saturday",  "reason": "First Saturday"},
+    {"date": "18th Feb 2026",  "day": "Wednesday", "reason": "Shivratri"},
+    {"date": "21st Feb 2026",  "day": "Saturday",  "reason": "Third Saturday"},
+    {"date": "2nd Mar 2026",   "day": "Monday",    "reason": "Holika Dahan"},
+    {"date": "3rd Mar 2026",   "day": "Tuesday",   "reason": "Holi (in lieu of 4th April)"},
+    {"date": "4th Mar 2026",   "day": "Wednesday", "reason": "Dulhendi (Holi)"},
+    {"date": "5th Mar 2026",   "day": "Thursday",  "reason": "Dulhendi (Holi)"},
+    {"date": "7th Mar 2026",   "day": "Saturday",  "reason": "First Saturday"},
+    {"date": "21st Mar 2026",  "day": "Saturday",  "reason": "Third Saturday + Eid-Ul-Fitr"},
+    {"date": "26th Mar 2026",  "day": "Thursday",  "reason": "Ram Navami"},
+    {"date": "4th Apr 2026",   "day": "Saturday",  "reason": "First Saturday"},
+    {"date": "14th Apr 2026",  "day": "Tuesday",   "reason": "Dr. B.R. Ambedkar Jayanti / Baisakhi"},
+    {"date": "18th Apr 2026",  "day": "Saturday",  "reason": "Third Saturday"},
+    {"date": "2nd May 2026",   "day": "Saturday",  "reason": "First Saturday"},
+    {"date": "16th May 2026",  "day": "Saturday",  "reason": "Third Saturday"},
+    {"date": "27th May 2026",  "day": "Wednesday", "reason": "Eid-Ul-Zuha (Bakrid)*"},
+    {"date": "6th Jun 2026",   "day": "Saturday",  "reason": "First Saturday"},
+    {"date": "20th Jun 2026",  "day": "Saturday",  "reason": "Third Saturday"}
+  ],
+
+  "events_calendar": [
+    {"event": "IGNITE'26",              "dates": "5th Feb to 6th Feb 2026"},
+    {"event": "Blood Donation Camp",    "dates": "10th Feb 2026"},
+    {"event": "RANN'26",               "dates": "12th Feb to 14th Feb 2026"},
+    {"event": "SportX Industry Meet",   "dates": "28th Feb 2026"},
+    {"event": "Technoverse 3.0",        "dates": "18th March 2026"},
+    {"event": "EPOQUE@PRASTUTI'26",    "dates": "2nd April to 4th April 2026"},
+    {"event": "TEDxKIET",              "dates": "10th April 2026"},
+    {"event": "ICICI-2026 Conference", "dates": "24th April to 25th April 2026"}
+  ],
+
+  "iqac_audits": [
+    {"audit": "IQAC Academic Audit 1", "dates": "9th March to 14th March 2026"},
+    {"audit": "IQAC Academic Audit 2", "dates": "8th June to 12th June 2026"}
+  ],
+
+  "chatbot_quick_answers": {
+    "When is MSE1?": "MSE1 is from 9th March 2026 to 14th March 2026.",
+    "When is MSE2?": "MSE2 is from 20th April 2026 to 25th April 2026.",
+    "When is End Semester Exam?": "End Semester Examination (ESE) is from 15th May 2026 to 30th May 2026.",
+    "When does semester start?": "Classes commence from 22nd January 2026.",
+    "When is last instructional day?": "The last instructional day is 9th May 2026.",
+    "When are results declared?": "ESE results are published on 23rd June 2026.",
+    "When is Holi holiday?": "Holi holidays are on 2nd, 3rd, 4th and 5th March 2026.",
+    "When is Eid?": "Eid-Ul-Fitr is on 21st March 2026. Eid-Ul-Zuha (Bakrid) is on 27th May 2026 (tentative).",
+    "When is practical exam?": "End Semester Practical Examination is from 1st June to 5th June 2026.",
+    "When is makeup exam?": "Make-up Examination is from 11th May to 14th May 2026.",
+    "When does new semester start?": "New semester begins on 3rd August 2026.",
+    "How many academic days in this semester?": "Total academic days = 90 days.",
+    "When is result of MSE1?": "MSE1 marks are uploaded by 31st March 2026. Grievance redressal is till 28th March 2026.",
+    "When is result of MSE2?": "MSE2 marks are uploaded by 11th May 2026. Grievance redressal is till 8th May 2026.",
+    "When is CA1 upload deadline?": "CA1 upload deadline on ERP is 23rd February to 28th February 2026.",
+    "When is CA2 upload deadline?": "CA2 upload deadline on ERP is 27th April to 2nd May 2026."
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "3rd Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "CS205B",
+  "course_name": "Artificial Intelligence and Its Applications",
+  "L": 3, "T": 0, "P": 2, "credits": 4,
+  "type": "Blended",
+  "category": "Major (Core)",
+  "BOS": "CS",
+  "prerequisite": "Python Programming",
+  "total_lecture_hours": 75,
+
+  "marks": {
+    "MSE1": 40, "MSE2": 40,
+    "CA1": 8, "CA2": 8, "CA3_ATT": 4,
+    "total_MSE": 80, "total_CA": 20,
+    "ESE": 100, "total": 200
+  },
+
+  "course_objectives": [
+    "To provide students with a foundational understanding of AI concepts, tools, and practical implementations, including search algorithms, knowledge representation, and ethical considerations.",
+    "To equip students with hands-on experience in designing and implementing agentic AI systems, genetic algorithms, and their real-world applications."
+  ],
+
+  "course_outcomes": [
+    "CO1: Demonstrate foundational understanding of AI, implementing logic-based systems and classical search algorithms.",
+    "CO2: Design and simulate intelligent agents and multi-agent systems in diverse environments.",
+    "CO3: Apply reinforcement learning techniques to develop learning agents and multi-agent environments.",
+    "CO4: Construct and optimize Genetic Algorithm-based solutions to solve complex real-world problems.",
+    "CO5: Evaluate and integrate AI techniques for real-world applications."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Practical Foundations of Artificial Intelligence",
+      "hours": 18,
+      "topics": [
+        "Definition, History, and Evolution of AI",
+        "Key Domains: Machine Learning, Deep Learning, NLP, Computer Vision",
+        "AI Applications in Healthcare, Finance, and Robotics",
+        "Python for AI: NumPy, Pandas, and Scikit-learn",
+        "Introduction to TensorFlow/PyTorch",
+        "Using Jupyter Notebooks for Experiments",
+        "Uninformed Search Strategies: BFS, DFS",
+        "Informed Search Strategies: A*, Greedy Best-First Search",
+        "Constraint Satisfaction Problems (CSPs)",
+        "BFS & DFS Implementation in Python",
+        "Developing a Maze Solver using Search Algorithms",
+        "Implementing A* Algorithm for Path Planning",
+        "Propositional Logic and First-Order Logic",
+        "Knowledge Graphs and Ontologies",
+        "Responsible AI Practices, Fairness, Transparency, and Explainability",
+        "Implementing Logic-Based Systems with Python Libraries",
+        "Building a Rule-Based Expert System"
+      ],
+      "mini_projects": [
+        "Implement a Tic-Tac-Toe AI using Minimax Algorithm",
+        "Create a Pathfinding Visualizer for BFS/DFS/A*"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Foundations of Agentic AI and Intelligent Agents",
+      "hours": 19,
+      "topics": [
+        "Definition and Characteristics of Agents",
+        "Types of Agents: Reflex, Goal-Based, Utility-Based",
+        "Agent Environments: Fully vs. Partially Observable",
+        "Build Reflex and Goal-Based Agents in Python",
+        "Smart Vacuum Cleaner Simulation",
+        "Self-Navigating Agent in a Virtual Grid",
+        "Multi-Agent Systems (MAS): Coordination and Communication",
+        "Real-World Applications: Smart Grids, Collaborative Robot",
+        "Introduction to Markov Decision Processes (MDPs)",
+        "Basics of Game Theory and Nash Equilibrium",
+        "Designing Rule-Based Decision Logic"
+      ],
+      "mini_project": "Build a Reflex Agent for Maze Navigation"
+    },
+    {
+      "unit_no": 3,
+      "title": "Learning Agents and Practical Agentic AI Systems",
+      "hours": 19,
+      "topics": [
+        "Learning Agents: Characteristics and Architectures",
+        "Reinforcement Learning Fundamentals",
+        "Introduction to OpenAI Gym",
+        "Q-Learning: Concepts and Python Implementation",
+        "Deep Q-Networks (DQN): Architecture and Training",
+        "Visualizing Agent Learning Progress",
+        "Develop AI Agent for Snake or Flappy Bird",
+        "Reward Shaping and Environment Design",
+        "Cooperative and Competitive Agents",
+        "Traffic Control Simulation using Multi-Agent Systems",
+        "Reinforcement Learning in Multi-Agent Scenarios"
+      ],
+      "mini_project": "Solve Frozen Lake Environment using Q-Learning"
+    },
+    {
+      "unit_no": 4,
+      "title": "Genetic Algorithms & Applications",
+      "hours": 19,
+      "topics": [
+        "Introduction to Evolutionary Algorithms",
+        "Darwinian Principles: Selection, Mutation, Crossover",
+        "Genetic Algorithm Workflow and Structure",
+        "Chromosome Representation Techniques",
+        "Fitness Functions and Selection Strategies",
+        "Crossover Techniques: One-point, Two-point, Uniform",
+        "Mutation Methods",
+        "Writing a Basic GA from Scratch in Python",
+        "Custom Fitness Function Design",
+        "Visualizing GA Evolution with Matplotlib",
+        "Elitism and Diversity Preservation",
+        "Parameter Tuning for Performance Optimization",
+        "Hybrid GAs: Integration with Local Search and Simulated Annealing",
+        "Introduction to Memetic Algorithms",
+        "Solving the Traveling Salesman Problem (TSP)",
+        "Feature Selection in Machine Learning",
+        "Scheduling and Resource Allocation Problems",
+        "Autonomous Route Planning"
+      ],
+      "mini_project": "Solve Optimal Timetable Scheduling for a University"
+    }
+  ],
+
+  "textbooks": [
+    "Subrata Saha (PHI Learning)",
+    "Manaranjan Pradhan & U. Dinesh Kumar (Wiley India)",
+    "S. Russell and P. Norvig - Artificial Intelligence: A Modern Approach, Prentice Hall, Third Edition, 2009",
+    "I. Bratko - Prolog: Programming for Artificial Intelligence, Fourth edition, Addison-Wesley",
+    "M. Tim Jones - Artificial Intelligence: A Systems Approach (Computer Science), Jones and Bartlett, 2008",
+    "Nils J. Nilsson - The Quest for Artificial Intelligence, Cambridge University Press, 2009",
+    "Gerhard Weiss - Multi Agent Systems, Second Edition, MIT Press, 2013",
+    "David L. Poole and Alan K. Mackworth - Artificial Intelligence: Foundations of Computational Agents, Cambridge University Press, 2010",
+    "Online Resource: NPTEL's free AI Course by Prof. Deepak Khemani, IIT Madras"
+  ],
+
+  "reference_books": [
+    "Artificial Intelligence, Rich and Knight, (TMH)",
+    "Artificial Intelligence with Python - Prateek Joshi (Indian Author, Packt Publishing)"
+  ]
+}

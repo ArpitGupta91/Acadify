@@ -1,0 +1,124 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "4th Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "IT302L",
+  "course_name": "Computer Networks",
+  "L": 3, "T": 0, "P": 0, "credits": 3,
+  "type": "Lecture",
+  "category": "Major (Core)",
+  "BOS": "IT",
+  "prerequisite": "Computer Fundamentals",
+  "total_lecture_hours": 45,
+
+  "marks": {
+    "MSE1": 30, "MSE2": 30,
+    "CA1": 6, "CA2": 6, "CA_ATT": 3,
+    "total_MSE": 60, "total_CA": 15,
+    "ESE": 75, "total": 150
+  },
+
+  "course_objectives": [
+    "To provide insight about computer network concepts.",
+    "To gain comprehensive knowledge of layered communication architectures, functionalities, key protocols as well as security issues related with each layer."
+  ],
+
+  "course_outcomes": [
+    "CO1: Apply the knowledge of networking concepts and functionality of physical layer.",
+    "CO2: Explore the concept of elementary data link layer protocol to build a robust network.",
+    "CO3: Analyze the concept of routing and IP addressing in network layer.",
+    "CO4: Examine the usage and working of transport layer.",
+    "CO5: Determine the performance of different protocols used at application layer."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Introduction - Physical Layer",
+      "hours": 9,
+      "topics": [
+        "Introduction to computer networks: Network applications, Mode of communications",
+        "LAN, MAN, WAN, Internet",
+        "Network hardware, network software",
+        "Design issues of layers",
+        "Reference models: OSI, TCP/IP layers, and characteristics",
+        "Physical Layer: Network devices, Network topology",
+        "Transmission media, Signal transmission",
+        "Network performance and transmission impairments",
+        "Public switched telephone network",
+        "Switching techniques"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Data Link Layer",
+      "hours": 9,
+      "topics": [
+        "Data Link layer: Design issues, Framing",
+        "Error Detection and Correction",
+        "Flow control: Elementary Data Link Protocols, Sliding Window protocols",
+        "Multiple access protocols: Random Access (ALOHA, CSMA, CSMA/CD, CSMA/CA)",
+        "Controlled Access: Polling, Reservation, Token Passing",
+        "Channelization: FDMA, TDMA, CDMA",
+        "IEEE standards Wired LANs (Ethernet): Traditional, Fast, Gigabit Ethernet",
+        "Wireless LANs: IEEE 802.11 and Bluetooth"
+      ]
+    },
+    {
+      "unit_no": 3,
+      "title": "Network Layer",
+      "hours": 9,
+      "topics": [
+        "Network layer design issues",
+        "Logical addressing: Basic internetworking, Subnetting, Supernetting, NAT",
+        "Network layer protocols: IPv4, IPv6",
+        "Routing: Static and dynamic routing",
+        "Routing algorithms and protocols: Shortest Path Algorithms, Flooding",
+        "Distance Vector Routing, Link State Routing",
+        "Hierarchical Routing, Broadcast Routing, Multicast Routing, Anycast Routing",
+        "Protocols: RIP, OSPF, BGP"
+      ]
+    },
+    {
+      "unit_no": 4,
+      "title": "Transport Layer",
+      "hours": 9,
+      "topics": [
+        "Process-to-process delivery",
+        "Transport layer protocols: UDP and TCP, SCTP",
+        "Connection management",
+        "Congestion control in TCP: Open Loop, Closed Loop choke packets",
+        "Quality of service (QoS): Leaky bucket algorithm, Token bucket algorithm"
+      ]
+    },
+    {
+      "unit_no": 5,
+      "title": "Application Layer",
+      "hours": 9,
+      "topics": [
+        "Session Layer: Roles and responsibility of session layer protocols",
+        "Presentation Layer: Cryptography",
+        "Symmetric-key cryptography, Asymmetric-key cryptography, Digital Signature",
+        "Compression: Lossless and Lossy Compression",
+        "Application Layer: Domain Name System (DNS)",
+        "World Wide Web and HTTP",
+        "Electronic mail, File Transfer Protocol (FTP)",
+        "Simple Network Management Protocol (SNMP)",
+        "Telnet"
+      ]
+    }
+  ],
+
+  "textbooks": [
+    "Behrouz Forouzan - Data Communication and Networking, Fourth Edition-2006, Tata McGraw Hill",
+    "Andrew Tanenbaum - Computer Networks, Fifth Edition-2011, Prentice Hall",
+    "William Stallings - Data and Computer Communication, Eighth Edition-2008, Pearson"
+  ],
+
+  "reference_books": [
+    "Kurose and Ross - Computer Networking: A Top-Down Approach, Eighth Edition-2021, Pearson",
+    "Peterson and Davie - Computer Networks: A Systems Approach, Fourth Edition-1996, Morgan Kaufmann",
+    "Behrouz Forouzan - TCP/IP Protocol Suite, McGraw Hill"
+  ]
+}

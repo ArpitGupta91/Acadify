@@ -1,0 +1,132 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "3rd Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "IT301L",
+  "course_name": "Database Systems",
+  "L": 3, "T": 0, "P": 0, "credits": 3,
+  "type": "Lecture",
+  "category": "Major (Core)",
+  "BOS": "IT",
+  "prerequisite": "Concepts of any programming language",
+  "total_lecture_hours": 45,
+
+  "marks": {
+    "MSE1": 30, "MSE2": 30,
+    "CA1": 6, "CA2": 6, "CA3_ATT": 3,
+    "total_MSE": 60, "total_CA": 15,
+    "ESE": 75, "total": 150
+  },
+
+  "course_objectives": [
+    "To develop a strong foundation in database management concepts.",
+    "To equip students with practical skills in database design, normalization, transaction management, and recovery techniques."
+  ],
+
+  "course_outcomes": [
+    "CO1: Acquire knowledge of database design methodology for real-life applications",
+    "CO2: Design an information model using the concept of ER diagram",
+    "CO3: Apply the concept of SQL on real-life databases",
+    "CO4: Analyze the redundancy problem in the database and reduce it using normalization.",
+    "CO5: Identify the broad range of database management issues including data integrity, security, and recovery transactions."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Introduction to Database System",
+      "hours": 9,
+      "topics": [
+        "Database System vs File System",
+        "Database System Concept and Architecture",
+        "Data Model Schema and Instances",
+        "Data Independence and its Types",
+        "Overall Database Structure",
+        "Entity Relationship Model: ER Model Concepts",
+        "Notation for ER Diagram",
+        "Mapping Constraints",
+        "Key attribute, Generalization, Aggregation",
+        "Reduction of ER Diagrams to Tables",
+        "Use Case: Banking System, National Hockey League (NHL)"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Relational Data Model",
+      "hours": 9,
+      "topics": [
+        "Relational Data Model Concepts",
+        "Type of keys",
+        "Integrity Constraints: Entity integrity and referential integrity",
+        "Keys Constraints, Domain Constraints",
+        "Relational Algebra: SELECT, PROJECT, CROSS, JOIN, DIVISION",
+        "Queries in Relational Algebra",
+        "SQL: Introduction, Characteristics, Data Types",
+        "Basic Queries: CREATE, SELECT, INSERT, DELETE, UPDATE",
+        "GROUP BY, HAVING, ORDER BY",
+        "Sub Queries, Aggregate Functions, Joins, Unions, Intersection, Minus, Views"
+      ]
+    },
+    {
+      "unit_no": 3,
+      "title": "Database Design and Normalization",
+      "hours": 9,
+      "topics": [
+        "Functional Dependencies",
+        "Inference rules, Closure of attributes",
+        "FD equivalence and Minimal cover",
+        "Normal forms: 1NF, 2NF, 3NF, BCNF",
+        "Lossless join decompositions",
+        "Dependency Preservation",
+        "Multi-valued Dependencies and 4NF",
+        "Join Dependencies and 5NF"
+      ]
+    },
+    {
+      "unit_no": 4,
+      "title": "Transaction Processing",
+      "hours": 9,
+      "topics": [
+        "Transaction and its States",
+        "ACID property",
+        "Transaction Scheduling",
+        "Serializability of scheduling",
+        "Conflict and View Serializability",
+        "Concurrency Control",
+        "Locking Techniques for Concurrency Control",
+        "Two-phase locking techniques",
+        "Time Stamping Protocols for Concurrency Control"
+      ]
+    },
+    {
+      "unit_no": 5,
+      "title": "Database Recovery Techniques",
+      "hours": 9,
+      "topics": [
+        "Recovery Concepts, Recoverability",
+        "Log Based Recovery",
+        "Checkpoints, Shadow Paging",
+        "The ARIES recovery",
+        "Deadlock Handling",
+        "PL/SQL: Introduction, features, syntax",
+        "DDL within PL/SQL, DML in PL/SQL",
+        "Cursors, Stored procedures, Stored functions",
+        "Database triggers, Indexing",
+        "Case Study: Microsoft Azure SQL"
+      ]
+    }
+  ],
+
+  "textbooks": [
+    "Elmasri, Navathe - Fundamentals of Database Systems, Addison Wesley",
+    "Korth, Silbertz, Sudarshan - Database Concepts, McGraw Hill",
+    "Date C J - An Introduction to Database Systems, Addison Wesley"
+  ],
+
+  "reference_books": [
+    "Bipin C. Desai - An Introduction to Database Systems, Gagotia Publications",
+    "RAMAKRISHNAN - Database Management Systems, McGraw Hill",
+    "Rafe Colburn - Using SQL, PHI"
+  ]
+}

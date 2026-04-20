@@ -1,0 +1,121 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "4th Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "CS401L",
+  "course_name": "Design and Analysis of Algorithms",
+  "L": 3, "T": 0, "P": 0, "credits": 3,
+  "type": "Lecture",
+  "category": "Major (Core)",
+  "BOS": "CSE",
+  "prerequisite": "Strong foundation in mathematics, algorithmic problem-solving, and proficient programming skills",
+  "total_lecture_hours": 45,
+
+  "marks": {
+    "MSE1": 30, "MSE2": 30,
+    "CA1": 6, "CA2": 6, "CA4_ATT": 3,
+    "total_MSE": 60, "total_CA": 15,
+    "ESE": 75, "total": 150
+  },
+
+  "course_objectives": [
+    "Develop a strong understanding of algorithm design techniques for efficient problem-solving.",
+    "Analyze algorithm complexity and explore NP-completeness, approximation, and randomized algorithms."
+  ],
+
+  "course_outcomes": [
+    "CO1: Analyse algorithm efficiency using recurrence relations and sorting techniques.",
+    "CO2: Solve optimization problems with Greedy algorithms (MST, Shortest Path).",
+    "CO3: Implement Dynamic Programming for Knapsack, Matrix Chain Multiplication, etc.",
+    "CO4: Apply Backtracking and Branch & Bound to combinatorial problems.",
+    "CO5: Understand NP-Completeness, Approximation, and Randomized algorithms."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Introduction & Sorting in Linear Time",
+      "hours": 9,
+      "topics": [
+        "Algorithms, Algorithm Analysis",
+        "Recurrence Relations: substitution, Master's method, Change of Variables",
+        "Shell sort, Tim sort",
+        "Linear time sorting: Counting sort, Radix sort, Bucket sort"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Greedy Algorithms",
+      "hours": 9,
+      "topics": [
+        "Greedy Algorithm: General Characteristics",
+        "Fractional Knapsack problem",
+        "Activity selection problem",
+        "Task scheduling with deadline and penalty problem",
+        "Minimum Spanning trees: Kruskal's algorithm, Prim's algorithm",
+        "Single source shortest paths: Dijkstra's and Bellman Ford algorithms"
+      ]
+    },
+    {
+      "unit_no": 3,
+      "title": "Dynamic Programming",
+      "hours": 9,
+      "topics": [
+        "Introduction, The Principle of Optimality",
+        "Optimal binary search trees",
+        "0-1 Knapsack",
+        "Coin Change Problem",
+        "Assembly Line Scheduling",
+        "Longest Common Subsequence (LCS)",
+        "Word break problem",
+        "Matrix chain multiplication",
+        "Rod cutting problem",
+        "All pair shortest paths: Warshal's and Floyd's algorithms",
+        "Resource allocation problem"
+      ]
+    },
+    {
+      "unit_no": 4,
+      "title": "Backtracking & Branch and Bound",
+      "hours": 9,
+      "topics": [
+        "Back Tracking: Introduction",
+        "Subset sum problem",
+        "Permutation",
+        "N-queen problem",
+        "Graph Coloring",
+        "Hamiltonian Cycles and Sum of subsets",
+        "Branch and Bound: Traveling Salesman Problem"
+      ]
+    },
+    {
+      "unit_no": 5,
+      "title": "String Matching, Approximation Algorithm",
+      "hours": 9,
+      "topics": [
+        "String Matching: Introduction",
+        "Naive string matching algorithm",
+        "Rabin-Karp algorithm",
+        "String Matching with finite automata",
+        "KMP (Knuth Morris Pratt) matching algorithm",
+        "Boyer Moore String matching",
+        "Approximation algorithms: TSP, Hamiltonian problem, Vertex Cover Problem",
+        "Introduction to NP-Completeness: Class P and NP",
+        "Polynomial reduction, NP Completeness Problem, NP-Hard Problems",
+        "Randomized Algorithm"
+      ]
+    }
+  ],
+
+  "textbooks": [
+    "Cormen, Leiserson, Rivest, and Stein - Introduction to Algorithms (3rd ed.), MIT Press, 2009. ISBN 978-0262033848"
+  ],
+
+  "reference_books": [
+    "Dasgupta, Papadimitrou and Vazirani - Algorithms (3rd ed.), McGraw-Hill Education, 2006. ISBN 978-0073523408",
+    "Design and Analysis of Computer Algorithms by Aho, Hopcroft and Ullman, Pearson",
+    "Horowitz, Sahni, and Rajasekaran - Computer Algorithms (2nd ed.), Silicon Press, 2007. ISBN 978-0929306414",
+    "Kleinberg and Tardos - Algorithm Design (1st ed.), Pearson, 2005. ISBN 978-0321295354"
+  ]
+}

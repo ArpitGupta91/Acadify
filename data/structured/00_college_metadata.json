@@ -1,0 +1,79 @@
+{
+  "college": "KIET Group of Institutions",
+  "location": "Delhi-NCR, Ghaziabad",
+  "website": "www.kiet.edu",
+  "session": "2025-26",
+  "document_type": "Course Booklet - B.Tech II Year",
+  "autonomous": true,
+
+  "important_note": "This JSON data belongs ONLY to CSE and CS branch students. KIET has multiple branches - do NOT use this data for other branches.",
+
+  "branches_at_kiet": [
+    {
+      "branch_code": "CSE",
+      "full_name": "Computer Science and Engineering",
+      "this_booklet_applies": true
+    },
+    {
+      "branch_code": "CS",
+      "full_name": "Computer Science",
+      "this_booklet_applies": true
+    },
+    {
+      "branch_code": "CSE-AI",
+      "full_name": "Computer Science and Engineering (Artificial Intelligence)",
+      "this_booklet_applies": false,
+      "note": "Different course booklet applies"
+    },
+    {
+      "branch_code": "CSE-AIML",
+      "full_name": "Computer Science and Engineering (AI & Machine Learning)",
+      "this_booklet_applies": false,
+      "note": "Different course booklet applies"
+    },
+    {
+      "branch_code": "CSIT",
+      "full_name": "Computer Science and Information Technology",
+      "this_booklet_applies": false,
+      "note": "Different course booklet applies"
+    },
+    {
+      "branch_code": "IT",
+      "full_name": "Information Technology",
+      "this_booklet_applies": false,
+      "note": "Different course booklet applies"
+    }
+  ],
+
+  "grading_system": {
+    "scale": "10-point",
+    "grades": [
+      {"grade": "O",  "points": 10, "meaning": "Outstanding"},
+      {"grade": "A+", "points": 9,  "meaning": "Excellent"},
+      {"grade": "A",  "points": 8,  "meaning": "Very Good"},
+      {"grade": "B+", "points": 7,  "meaning": "Good"},
+      {"grade": "B",  "points": 6,  "meaning": "Above Average"},
+      {"grade": "C",  "points": 5,  "meaning": "Average"},
+      {"grade": "P",  "points": 4,  "meaning": "Pass"},
+      {"grade": "F",  "points": 0,  "meaning": "Fail"}
+    ],
+    "cgpa_formula": "CGPA = Sum(Grade Points x Credits) / Sum(Total Credits)"
+  },
+
+  "attendance_policy": {
+    "minimum_required_percentage": 75,
+    "consequence_below_75": "Student is detained and NOT allowed to appear in End Semester Examination (ESE)",
+    "CA3_attendance_marks": "3 to 4 marks out of total CA marks are based on attendance",
+    "attendance_display_schedule": [
+      "Department Level display before MSE1",
+      "Department Level display before MSE2"
+    ]
+  },
+
+  "evaluation_components": {
+    "MSE": "Mid Semester Examination (conducted centrally)",
+    "CA": "Continuous Assessment (internal marks by teacher)",
+    "ESE": "End Semester Examination",
+    "CIE": "Continuous Internal Evaluation = MSE + CA"
+  }
+}

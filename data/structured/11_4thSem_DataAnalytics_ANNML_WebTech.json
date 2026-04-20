@@ -1,0 +1,97 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "4th Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+  "courses": [
+    {
+      "course_code": "IT202B",
+      "course_name": "Data Analytics",
+      "L": 2, "T": 0, "P": 2, "credits": 3,
+      "type": "Blended",
+      "category": "Major (Core)",
+      "BOS": "CSIT",
+      "prerequisite": "Basic Knowledge of Python",
+      "total_lecture_hours": 60,
+      "marks": {"MSE1":30,"MSE2":30,"CA1":6,"CA2":6,"CA3_ATT":3,"total_MSE":60,"total_CA":15,"ESE":75,"total":150},
+      "course_objectives": [
+        "To introduce key concepts, lifecycle, and tools in data analytics.",
+        "To build practical skills in data preprocessing, visualization, and machine learning techniques.",
+        "To explore big data technologies such as Hadoop and Spark."
+      ],
+      "course_outcomes": [
+        "CO1: Explain key concepts, tools, and applications of data analytics.",
+        "CO2: Apply data cleaning and preprocessing using Python libraries.",
+        "CO3: Analyze data and visualize insights with BI tools.",
+        "CO4: Implement ML algorithms for classification and clustering.",
+        "CO5: Explore Big data framework and demonstrate Hadoop processing."
+      ],
+      "units": [
+        {"unit_no":1,"title":"Introduction to Data Analytics","hours":10,"topics":["Structured, unstructured, semi-structured data","Characteristics of data, need of data analytics","Data analytic tools, applications","Data Analytics Lifecycle (DALC)","Key roles for successful analytic projects"]},
+        {"unit_no":2,"title":"Data Collection, Cleaning & Preprocessing","hours":12,"topics":["Primary and Secondary sources","Handling missing data, outliers, noise","Transformation, normalization","Data wrangling using Pandas and NumPy"]},
+        {"unit_no":3,"title":"Exploratory Data Analysis & Visualization","hours":14,"topics":["Distributions, mean, standard deviation, median, mode","Confidence intervals, regression analysis, hypothesis testing","Random variables, probability distributions, Bayes Theorem","Power BI & Tableau: dynamic reports and dashboards","Interactive Case Studies"]},
+        {"unit_no":4,"title":"Machine Learning for Data Analytics","hours":12,"topics":["Supervised and unsupervised learning","Classification: Decision Trees, k-NN, Naive Bayes","Clustering: K-Means, Hierarchical Clustering","Dimensionality reduction: PCA","Association rule mining (Apriori algorithm)","Model evaluation: Confusion Matrix, Accuracy, Precision, Recall, F1-Score"]},
+        {"unit_no":5,"title":"Big Data and Advanced Analytics","hours":12,"topics":["Introduction to Big Data, Characteristics, Challenges","Hadoop, Hadoop components, Hadoop ecosystem","Apache Spark, Pig, Hive, HBase, Sqoop","MapReduce paradigm: algorithm MapReduce","Matrix vector multiplication by MapReduce"]}
+      ],
+      "textbooks": ["Michael Berthold, David J. Hand - Intelligent Data Analysis, Springer","Anand Rajaraman and Jeffrey David Ullman - Mining of Massive Datasets, Cambridge University Press","John Garrett - Data Analytics for IT Networks, Pearson Education"],
+      "reference_books": ["Foster Provost, Tom Fawcett - Data Science for Business, O'Reilly Media","Wes McKinney - Python for Data Analysis, O'Reilly Media","Jiawei Han, Micheline Kamber, Jian Pei - Data Mining: Concepts and Techniques, Morgan Kaufmann","Tom White - Hadoop: The Definitive Guide, O'Reilly Media"]
+    },
+    {
+      "course_code": "CS303B",
+      "course_name": "ANN and Machine Learning",
+      "L": 2, "T": 0, "P": 2, "credits": 3,
+      "type": "Blended",
+      "category": "Major (Core)",
+      "BOS": "CS",
+      "prerequisite": "Python Programming",
+      "total_lecture_hours": 60,
+      "marks": {"MSE1":30,"MSE2":30,"CA1":6,"CA2":6,"CA3_ATT":3,"total_MSE":60,"total_CA":15,"ESE":75,"total":150},
+      "course_objectives": [
+        "To equip students with foundational and advanced ML techniques including data preprocessing, supervised/unsupervised algorithms, and ensemble methods.",
+        "To provide hands-on experience in ANN and real-world applications like disease prediction, AutoML, and digit recognition."
+      ],
+      "course_outcomes": [
+        "CO1: Preprocess, clean, and transform datasets, implement supervised ML algorithms (KNN, SVM, Regression) using Python.",
+        "CO2: Apply unsupervised techniques (clustering, PCA) and feature engineering to real-world datasets.",
+        "CO3: Design ensemble models (Random Forest, Stacking) and optimize hyperparameters using AutoML tools.",
+        "CO4: Implement ANN models (MLP, RBF) for tasks like digit recognition and music classification."
+      ],
+      "units": [
+        {"unit_no":1,"title":"Understanding the Basics of ML","hours":15,"topics":["Data preprocessing: handling missing values, encoding categorical variables","Cleaning and transforming noisy datasets","KNN Classification, Linear Regression, SVM for spam detection","Confusion matrix, performance metrics, data visualization"],"mini_project":"Performance Comparison of Classification models on UCI dataset"},
+        {"unit_no":2,"title":"Practical Introduction to ML Algorithms","hours":15,"topics":["Feature engineering, feature selection techniques","Implementing PCA for feature extraction","Outlier Detection using Isolation Forest","Unsupervised ML: Clustering, DBSCAN, Optics"],"mini_project":"Feature Selection in Clustering: Comparative Implementation and Performance Analysis"},
+        {"unit_no":3,"title":"Ensemble Learning and Advanced Topics","hours":15,"topics":["Hyperparameter Tuning: Traditional vs Metaheuristic optimization","Grid search for ML hyperparameter tuning","Decision Tree and Random Forest","Ensemble stacking for sentiment analysis","Weather Forecasting, Disease prediction","AutoML frameworks and tools"],"mini_project":"Evaluating AutoML and Manual Hyperparameter Tuning for Disease Prediction Systems"},
+        {"unit_no":4,"title":"Fundamentals of ANN","hours":15,"topics":["Basics of ANN: Single perceptron, perceptron learning rule","Activation functions","Binary classifier using single perceptron","MLP in Python","RBFClassifier in Python","Simulations of MLP/RBFclassifier using scikit-learn","Predicting student performance using MLP","Classifying Music genres using RBFClassifier"],"mini_project":"Handwritten Digit Recognition using MLP"}
+      ],
+      "textbooks": ["Tom M. Mitchell - Machine Learning, McGraw-Hill Education, 2013","Ethem Alpaydin - Introduction to Machine Learning, MIT Press 2004","Stephen Marsland - Machine Learning: An Algorithmic Perspective, CRC Press, 2009","Bishop, C. - Pattern Recognition and Machine Learning, Springer-Verlag","M. Gopal - Applied Machine Learning, McGraw Hill Education"],
+      "reference_books": ["Python Data Science Handbook - Jake VanderPlas","Ensemble Methods for Machine Learning - Gautam Kunapuli (Manning)","AutoML: Methods, Systems, Challenges - Frank Hutter et al.","Neural Networks and Deep Learning - Charu C. Aggarwal (Springer)"]
+    },
+    {
+      "course_code": "CS208B",
+      "course_name": "Web Technology",
+      "L": 2, "T": 0, "P": 2, "credits": 3,
+      "type": "Blended",
+      "category": "Major (Core)",
+      "BOS": "CSE",
+      "prerequisite": "Web Development, HTML, CSS, JavaScript",
+      "total_lecture_hours": 30,
+      "marks": {"MSE1":30,"MSE2":30,"CA1":6,"CA2":6,"CA3_ATT":3,"total_MSE":60,"total_CA":15,"ESE":75,"total":150},
+      "course_objectives": [
+        "To familiarize students with the modern technologies used in web technologies.",
+        "To realize the fundamentals of Flutter & Python web development frameworks."
+      ],
+      "course_outcomes": [
+        "CO1: Understand advanced ES6 JavaScript features to develop modular and asynchronous applications.",
+        "CO2: Build cross-platform mobile applications by applying Dart and Flutter with OOP and async concepts.",
+        "CO3: Design and implement interactive Flutter applications using state management, navigation, and basic animations.",
+        "CO4: Build web applications using Flask and Django, utilizing MVC architecture, form handling, and REST API development."
+      ],
+      "units": [
+        {"unit_no":1,"title":"Advanced ES6 JavaScript","hours":15,"topics":["ES6 features overview","Variable declarations: var vs let vs const","Arrow functions: syntax, single-line and multi-line","Template literals","Array destructuring and object destructuring, default values","Rest operator (...) and spread operator","Asynchronous programming, Promises","then(), catch(), and basic error handling"]},
+        {"unit_no":2,"title":"Fundamentals of Flutter and Dart Programming","hours":15,"topics":["Introduction to Cross-Platform Development and Flutter framework","Installing Flutter SDK, Android Studio Setup","Dart Basics: Variables, Data Types, Control Flow, Functions, Scope","OOP & Async: Classes, Objects, Inheritance, Mixins, Future, async/await","Stateless vs. Stateful Widgets, Container, Row, ListView, Image"]},
+        {"unit_no":3,"title":"Input, Navigation UI and Animations","hours":15,"topics":["Handling Input Forms, Handling Taps and Events","Understanding Ephemeral State, setState()","Navigation: push/pop, named routes","BottomNavBar, TabBar, Drawer","ListView, GridView, cards","Basic animations: AnimatedContainer, Hero","Themes, fonts and colors","Android App Deployment and Publishing on Google Play"]},
+        {"unit_no":4,"title":"Web Development with Python: Django & Flask","hours":15,"topics":["Flask: Installation, basic routing, request and response handling","Jinja2 templating, form handling, validation","Building REST APIs using Flask","Django: MVC architecture, installation, project setup","Connecting to databases, Creating models, migrations","Django Views & Templates, URL routing, template rendering, form handling"]}
+      ],
+      "textbooks": ["JavaScript: The Definitive Guide, David Flanagan","Flutter and Dart: Up and Running, Roopal Khurana and Dr. Deepti Chopra","Flutter for Beginners by Alessandro Biessek","Flask Web Development: Developing Web Applications with Python, Miguel Grinberg"],
+      "reference_books": ["Flutter and Dart Cookbook: Developing Full-Stack Applications for the Cloud by Richard Rose","Mastering Dart & Flutter 2025"]
+    }
+  ]
+}

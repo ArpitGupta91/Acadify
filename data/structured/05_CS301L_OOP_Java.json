@@ -1,0 +1,127 @@
+{
+  "branch": "CSE / CS only",
+  "semester": "3rd Semester",
+  "WARNING": "This data is ONLY for CSE and CS branch.",
+
+  "course_code": "CS301L",
+  "course_name": "Object Oriented Programming using Java",
+  "L": 3, "T": 0, "P": 0, "credits": 3,
+  "type": "Lecture",
+  "category": "Major (Core)",
+  "BOS": "CS",
+  "prerequisite": "NA",
+  "total_lecture_hours": 45,
+
+  "marks": {
+    "MSE1": 30, "MSE2": 30,
+    "CA1": 6, "CA2": 6, "CA3_ATT": 3,
+    "total_MSE": 60, "total_CA": 15,
+    "ESE": 75, "total": 150
+  },
+
+  "course_objectives": [
+    "To familiarize students with the basic and advance Java Programming Language.",
+    "To learn modern tools to develop java-based web applications."
+  ],
+
+  "course_outcomes": [
+    "CO1: Implement core Java concepts that model real world entities.",
+    "CO2: Develop programs based on new java features.",
+    "CO3: Apply a collection framework to build modular java programs.",
+    "CO4: Construct dynamic web pages using JDBC, Servlets and JSP.",
+    "CO5: Implement web and RESTful Web Services with Spring Boot using Spring Framework concepts."
+  ],
+
+  "units": [
+    {
+      "unit_no": 1,
+      "title": "Java Basics",
+      "hours": 9,
+      "topics": [
+        "Introduction to Java, JVM, JRE, Java Environment",
+        "Java Source File Structure and Compilation",
+        "Defining Classes in Java, Constructors, Methods",
+        "Access Specifiers, Static Members, Final Members",
+        "Class, Object, Abstraction, Inheritance, Encapsulation, Polymorphism",
+        "Exceptions: try, catch, finally, throw, throws",
+        "In-built and User Defined Exceptions",
+        "Checked and Un-Checked Exceptions"
+      ]
+    },
+    {
+      "unit_no": 2,
+      "title": "Java Features",
+      "hours": 9,
+      "topics": [
+        "Thread, Thread Life Cycle, Creating Threads, Thread Priorities",
+        "Functional Interfaces, Lambda Expression, Method References",
+        "Stream API, Default Methods, Static Method, For Each Method",
+        "Try-with-resources, Type Annotations, Repeating Annotations",
+        "Java Module System, Diamond Syntax with Inner Anonymous Class",
+        "Local Variable Type Inference, Switch Expressions, Yield Keyword",
+        "Records, Sealed Classes"
+      ]
+    },
+    {
+      "unit_no": 3,
+      "title": "Java Collections",
+      "hours": 9,
+      "topics": [
+        "Collection in Java, Collection Framework Hierarchy",
+        "Iterator Interface, Collection Interface",
+        "List Interface: ArrayList, LinkedList, Vector, Stack",
+        "Queue Interface",
+        "Set Interface: HashSet, LinkedHashSet, TreeSet",
+        "Map Interface: HashMap, LinkedHashMap, TreeMap, Hashtable",
+        "Sorting, Comparable Interface, Comparator Interface",
+        "Properties Class in Java"
+      ]
+    },
+    {
+      "unit_no": 4,
+      "title": "Advance Java",
+      "hours": 9,
+      "topics": [
+        "JDBC: Merging Data from Multiple Tables, Joins, Manipulating Databases",
+        "Prepared Statements, Transaction Processing, Stored Procedures",
+        "Servlet Overview and Architecture",
+        "Interface Servlet and the Servlet Life Cycle",
+        "Handling HTTP get and post Requests",
+        "Redirecting Requests, Session Tracking, Cookies",
+        "Session Tracking with HttpSession",
+        "Java Server Pages (JSP): Implicit Objects, Scripting, Standard Actions, Directives"
+      ]
+    },
+    {
+      "unit_no": 5,
+      "title": "Spring and Spring Boot",
+      "hours": 9,
+      "topics": [
+        "MVC, Spring Core Basics, Spring Dependency Injection",
+        "Spring Inversion of Control, AOP",
+        "Bean Scopes: Singleton, Prototype, Request, Session, Application, Web Socket",
+        "Auto wiring, Annotations, Life Cycle Callbacks",
+        "Bean Configuration styles",
+        "Spring Boot Build Systems, Spring Boot Code Structure",
+        "Spring Boot Runners, Logger",
+        "Building RESTful Web Services: Rest Controller, Request Mapping",
+        "GET, POST, PUT, DELETE APIs",
+        "Build Web Applications"
+      ]
+    }
+  ],
+
+  "textbooks": [
+    "Herbert Schildt - Java The complete reference, McGraw Hill Education",
+    "Steven Holzner - Java Black Book, Dreamtech",
+    "Balagurusamy E - Programming in Java, McGraw Hill",
+    "Java: A Beginner's Guide by Herbert Schildt, Oracle Press",
+    "Greg L. Turnquist - Learning Spring Boot 2.0 - Second Edition, Packt Publication"
+  ],
+
+  "reference_books": [
+    "Kathey Sierra - Head First Java, O'Reilly",
+    "AJ Henley Jr, Dave Wolf - Introduction to Java Spring Boot: Learning by Coding",
+    "Craig Walls - Spring Boot in Action, Manning Publication"
+  ]
+}
