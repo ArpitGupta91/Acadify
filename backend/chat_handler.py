@@ -5,6 +5,7 @@ from typing import Any, Dict
 
 try:
     from .calculator import AttendanceCalculator
+    from .config import ENABLE_ML_MODELS
     from .json_loader import (
         SUBJECT_CODE_MAP,
         get_next_holiday,
@@ -19,6 +20,7 @@ try:
     from .retriever import retrieve_context
 except ImportError:
     from calculator import AttendanceCalculator
+    from config import ENABLE_ML_MODELS
     from json_loader import (
         SUBJECT_CODE_MAP,
         get_next_holiday,
@@ -36,7 +38,10 @@ except ImportError:
 JSON_DATA = load_all_json_data()
 
 # Load ML models on startup
-load_models()
+if ENABLE_ML_MODELS:
+    load_models()
+else:
+    print("[MODEL] ML model loading disabled by configuration (low-memory mode).")
 
 # Confidence thresholds
 INTENT_THRESHOLD = 0.55

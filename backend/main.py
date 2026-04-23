@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 from .calculator import AttendanceCalculator, CGPACalculator
 from .chat_handler import handle_chat
-from .config import BRANCH, PDF_FOLDER
+from .config import BRANCH, ENABLE_VECTOR_STORE, PDF_FOLDER
 from .ingest import build_vector_store, chunk_documents, load_pdfs, load_vector_store
 from .json_loader import load_all_json_data
 
@@ -224,7 +224,13 @@ def on_startup() -> None:
         JSON_DATA = {}
         print(f"Failed to load structured JSON data: {error}")
 
-    threading.Thread(target=_load_vector_store_background, daemon=True).start()
+    if ENABLE_VECTOR_STORE:
+        threading.Thread(target=_load_vector_store_background, daemon=True).start()
+    else:
+        global VECTOR_STORE, VECTOR_STORE_STATUS
+        VECTOR_STORE = None
+        VECTOR_STORE_STATUS = "disabled"
+        print("Vector store loading disabled by configuration (low-memory mode).")
 
 
 @app.post("/chat")
