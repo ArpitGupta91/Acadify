@@ -125,6 +125,21 @@ def format_attendance_result(result: Dict[str, Any]) -> str:
     )
 
 
+def is_books_query(query: str) -> bool:
+    query_lower = (query or "").lower()
+    keywords = [
+        "textbook",
+        "textbooks",
+        "reference book",
+        "reference books",
+        "books",
+        "book list",
+        "recommended books",
+        "study material",
+    ]
+    return any(keyword in query_lower for keyword in keywords)
+
+
 def format_single_subject_response(subject: Dict[str, Any]) -> str:
     course_name = subject.get("course_name", subject.get("subject_name", "Unknown Subject"))
     course_code = subject.get("course_code", "")
@@ -275,7 +290,7 @@ def handle_chat(query: str, vector_store=None, session_id: str = "default") -> D
         }
 
     # Professional elective routing must happen before general subject detection.
-    if is_professional_elective_query(query):
+    if is_professional_elective_query(query) and not is_books_query(query):
         pe_data = (
             JSON_DATA.get("professional_electives")
             or JSON_DATA.get("4th_sem_professional_elective")
