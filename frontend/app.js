@@ -122,36 +122,11 @@ function formatBotResponse(text) {
 
 function createBotMessageHTML(responseData) {
   const text = responseData?.response || responseData?.answer || responseData || "";
-  const sourceType = responseData?.source_type || responseData?.type || "json_lookup";
-  const sources = Array.isArray(responseData?.sources) ? responseData.sources : [];
 
   const formattedText = formatBotResponse(text);
 
-  let badgeHTML = "";
-  let sourceLineHTML = "";
-
-  if (sourceType === "json_lookup" || sourceType === "json") {
-    badgeHTML = '<span class="source-badge"><span class="badge-icon">📁</span> JSON Data</span>';
-  } else if (sourceType === "rag") {
-    badgeHTML = '<span class="source-badge"><span class="badge-icon">🤖</span> AI Response</span>';
-  } else if (sourceType === "calculator") {
-    badgeHTML = '<span class="source-badge"><span class="badge-icon">🧮</span> Calculator</span>';
-  } else {
-    badgeHTML = '<span class="source-badge"><span class="badge-icon">📁</span> JSON Data</span>';
-  }
-
-  if (sources.length > 0) {
-    sourceLineHTML = '<div class="source-line">Source: ' + sources.join(", ") + "</div>";
-  }
-
-  const showFooter = sourceType !== "greeting";
-  const footerHTML = showFooter && (badgeHTML || sourceLineHTML)
-    ? '<div class="response-footer">' + badgeHTML + sourceLineHTML + "</div>"
-    : "";
-
   return '<div class="bot-response-card">'
     + '<div class="response-body message-text">' + formattedText + "</div>"
-    + footerHTML
     + "</div>";
 }
 
@@ -261,6 +236,7 @@ async function sendMessage(query) {
   renderMessage(clean, {}, false);
   el.chatInput.value = "";
   el.sendBtn.disabled = true;
+  el.sendBtn.textContent = "Sending...";
   showTypingIndicator();
 
   try {
@@ -277,6 +253,7 @@ async function sendMessage(query) {
     el.chatContainer.appendChild(botWrap);
     el.chatContainer.scrollTop = el.chatContainer.scrollHeight;
     el.sendBtn.disabled = false;
+    el.sendBtn.textContent = "Send";
 
     chatHistory.push({ query: clean, answer: data.answer, type: data.type, timestamp: data.timestamp });
   } catch (error) {
@@ -287,6 +264,7 @@ async function sendMessage(query) {
       true
     );
     el.sendBtn.disabled = false;
+    el.sendBtn.textContent = "Send";
   } finally {
     isLoading = false;
   }
@@ -703,6 +681,18 @@ async function init() {
 
 window.addEventListener("DOMContentLoaded", () => {
   init();
+
+  if (el.sendBtn) {
+    el.sendBtn.disabled = true;
+  }
+
+  el.chatInput.addEventListener("input", () => {
+    if (isLoading) {
+      el.sendBtn.disabled = true;
+      return;
+    }
+    el.sendBtn.disabled = !el.chatInput.value.trim();
+  });
 
   el.sendBtn.addEventListener("click", () => sendMessage(el.chatInput.value));
   el.chatInput.addEventListener("keydown", (event) => {

@@ -444,6 +444,8 @@ def _collect_subject_records(json_data: Dict[str, Dict[str, Any]]) -> List[Dict[
                     "marks": payload.get("marks", {}),
                     "credits": payload.get("credits", ""),
                     "total_hours": payload.get("total_lecture_hours", payload.get("total_hours", "")),
+                    "textbooks": payload.get("textbooks", []),
+                    "reference_books": payload.get("reference_books", []),
                     "raw": payload,
                 }
             )
@@ -461,6 +463,8 @@ def _collect_subject_records(json_data: Dict[str, Dict[str, Any]]) -> List[Dict[
                         "marks": course.get("marks", {}),
                         "credits": course.get("credits", ""),
                         "total_hours": course.get("total_lecture_hours", course.get("total_hours", "")),
+                        "textbooks": course.get("textbooks", []),
+                        "reference_books": course.get("reference_books", []),
                         "raw": course,
                     }
                 )
@@ -876,6 +880,60 @@ def search_json(query: str, json_data: Dict[str, Dict[str, Any]],
                 "formatted_answer": f"{answer}\n\nNote: This information is for CSE/CS branch only.",
                 "branch_note": "This information is for CSE/CS branch only.",
             }
+
+    # CATEGORY 3B: TEXTBOOKS / REFERENCE BOOKS
+    books_keywords = [
+        "textbook",
+        "textbooks",
+        "reference book",
+        "reference books",
+        "books",
+        "book list",
+        "recommended books",
+        "study material",
+    ]
+    if _match_any(query_lower, books_keywords):
+        course_payload = None
+        source_label = "subject.json"
+
+        if matched_subject:
+            course_payload = matched_subject.get("raw", matched_subject)
+            source_label = JSON_FILE_INDEX.get(matched_subject.get("source_key", ""), source_label)
+        elif resolved_subject_code:
+            course_payload = find_course_by_code(json_data, resolved_subject_code, prefer_theory=True)
+            source_label = resolved_subject_code
+
+        if course_payload:
+            course_name = course_payload.get("course_name", "Subject")
+            course_code = course_payload.get("course_code", "")
+            textbooks = course_payload.get("textbooks", []) or []
+            ref_books = course_payload.get("reference_books", []) or []
+
+            lines = [f"📘 {course_name} ({course_code})"]
+            if textbooks:
+                lines.append("\n**Textbooks:**")
+                lines.extend([f"- {book}" for book in textbooks])
+            if ref_books:
+                lines.append("\n**Reference Books:**")
+                lines.extend([f"- {book}" for book in ref_books])
+
+            if not textbooks and not ref_books:
+                lines.append("No textbook/reference book data is available for this subject in structured JSON.")
+
+            return {
+                "found": True,
+                "source": f"JSON - {source_label}",
+                "data": course_payload,
+                "formatted_answer": "\n".join(lines) + "\n\nNote: This information is for CSE/CS branch only.",
+                "branch_note": "This information is for CSE/CS branch only.",
+            }
+
+        return {
+            "found": True,
+            "source": "JSON - structured_data",
+            "formatted_answer": "Please mention the subject name or code. Example: 'textbooks for IT302L' or 'reference books for DAA'.",
+            "branch_note": "This information is for CSE/CS branch only.",
+        }
 
     # CATEGORY 4: MARKS/CREDITS
     marks_keywords = [
