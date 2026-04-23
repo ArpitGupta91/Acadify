@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+const API_BASE = String(window.API_BASE || "http://localhost:8000").replace(/\/+$/, "");
 const SESSION_ID = 'kiet_session_' + Date.now();
 const BRANCH = "CSE/CS";
 

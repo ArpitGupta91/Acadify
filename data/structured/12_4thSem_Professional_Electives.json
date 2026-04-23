@@ -15,6 +15,7 @@
         "course_name": "Frontend Engineering with React & Next",
         "elective_track": "Full Stack Product Engineering with AI (Powered by Xebia)",
         "prerequisite": "Computer Fundamentals",
+        "marks": {"MSE1":40,"MSE2":40,"CA1":8,"CA2":8,"CA3_ATT":4,"total_MSE":80,"total_CA":20,"ESE":100,"total":200},
         "total_hours": 75,
         "units": [
           {"unit_no":1,"title":"Foundations of React ES6","hours":9,"topics":["Features of React, React architecture and mental model","How React Works, Leveraging Virtual DOM","Setting up React, Array & object methods"]},
@@ -24,13 +25,15 @@
           {"unit_no":5,"title":"NextJS","hours":9,"topics":["Next.js fundamentals: pages, routing, data fetching (SSR/SSG)","Authentication (JWT, OAuth) and session management","Integrating AI/LLM APIs for intelligent UI features","Analytics, logging, and observability","Deployment using Vercel, Netlify, or AWS Amplify"]}
         ],
         "lab_practicals": ["JS conditional logic, loops, array manipulations","DOM manipulation","Mini to-do list with add/edit/delete","ES6 features refactoring","React environment setup with Vite/CRA","Calculator app using React state","Form with validation using hooks","Movie/product listing with props","Redux shopping cart","Async API calls with Redux Toolkit","SPA with React Router","JWT authentication in Next.js","AI API integration in Next.js","Deploy to Vercel/Netlify"],
-        "textbooks": ["Banks, Porcello - Learning React, O'Reilly Media","Grider - Modern React with Redux, Udemy Press"]
+        "textbooks": ["Banks, Porcello - Learning React, O'Reilly Media","Grider - Modern React with Redux, Udemy Press"],
+        "reference_books": ["Freeman, E. - Full Stack React, O'Reilly Media","Next.js Official Documentation (Vercel Docs)"]
       },
       {
         "course_code": "CS307E",
         "course_name": "Intelligent Systems with Text & Vision API",
         "elective_track": "Next-Gen AI: From Models to Agents (Powered by Xebia)",
         "prerequisite": "Python Programming, Linear Algebra Basics, Probability Fundamentals",
+        "marks": {"MSE1":40,"MSE2":40,"CA1":8,"CA2":8,"CA3_ATT":4,"total_MSE":80,"total_CA":20,"ESE":100,"total":200},
         "total_hours": 75,
         "units": [
           {"unit_no":1,"title":"Natural Language Processing","hours":9,"topics":["Introduction to NLP, Types of NLP systems","How computer understands text, NLP Terminologies","Steps in NLP, NLP preprocessing pipeline","NLP Challenges","DevOps: MVP, Application Deployment, ARA, CI/CD"]},
@@ -40,13 +43,15 @@
           {"unit_no":5,"title":"Object Recognition & Tracking","hours":9,"topics":["Shape correspondence and matching, Sliding Window Method","Tracking Strategies, Matching, Tracking with Filters","Data Association, Particle Filtering","Stereo Vision, Motion estimation, Structure from motion"]}
         ],
         "lab_practicals": ["Multimodal dataset preprocessing with spaCy/NLTK and OpenCV","OCR with Tesseract/EasyOCR and text preprocessing","NER and word clouds from image captions","Sentiment analysis using BERT and ResNet/VGG16","Text-based image retrieval using CLIP","Visual Question Answering (VQA) system using Hugging Face","Image captioning with CNN-LSTM, BLEU/ROUGE evaluation","Object detection with YOLOv8/Detectron2","Multimodal emotion classification","Video object detection and NLP summarization","Handwritten notes OCR and NLP classification","Multimodal fake news detector","OCR + language translation","Interactive multimodal chatbot using CLIP/BLIP"],
-        "textbooks": ["Introduction to Natural Language Processing, Jacob Eisenstein, MIT Press","Mastering OpenCV with Python, O'Reilly Media"]
+        "textbooks": ["Introduction to Natural Language Processing, Jacob Eisenstein, MIT Press","Mastering OpenCV with Python, O'Reilly Media"],
+        "reference_books": ["Learning Image Processing with OpenCV, Packt Publishing","OpenCV Official Documentation","NLTK Official Documentation"]
       },
       {
         "course_code": "CS304E",
         "course_name": "DevOps Foundations & Version Control",
         "elective_track": "DevOps and Autonomous Engineering (Powered by Xebia)",
         "prerequisite": "Programming Fundamentals, Operating Systems Basics, Computer Networks Basics",
+        "marks": {"MSE1":40,"MSE2":40,"CA1":8,"CA2":8,"CA3_ATT":4,"total_MSE":80,"total_CA":20,"ESE":100,"total":200},
         "total_hours": 75,
         "units": [
           {"unit_no":1,"title":"Traditional SDLC Models, Problems & Solutions","hours":9,"topics":["Software Development Methodologies","Waterfall Model, Classical Waterfall Model","Traditional IT Organizations, Developers vs IT Operations Conflict","Birth of Agile, Four Values of the Agile Manifesto","Agile and Lean"]},
@@ -55,13 +60,15 @@
           {"unit_no":4,"title":"AI-Assisted Coding & Intelligent SCM","hours":9,"topics":["GitHub Copilot / CodeWhisperer basics","AI-based code completion, documentation, and refactoring","Integrating SonarQube + AI for code quality metrics","GitOps introduction: managing infra via Git (FluxCD, ArgoCD)","Build a GitOps pipeline to deploy a sample app"]},
           {"unit_no":5,"title":"Security, Compliance & Productivity Analytics","hours":9,"topics":["Policy-as-Code using OPA","Snyk AI for pre-commit scans","Secrets management & secure Git workflows","DevEx analytics - tracking productivity and automation ROI","Building dashboards for code quality and release cadence"]}
         ],
-        "textbooks": ["The DevOps Handbook, O'Reilly Media","The Linux DevOps Handbook, O'Reilly Media"]
+        "textbooks": ["The DevOps Handbook, O'Reilly Media","The Linux DevOps Handbook, O'Reilly Media"],
+        "reference_books": ["The Phoenix Project","Git-SCM Official Documentation"]
       },
       {
         "course_code": "CS335E",
         "course_name": "AWS Foundations & Data Engineering",
         "elective_track": "Data Engineering (Powered by AWS)",
         "prerequisite": "NA",
+        "marks": {"MSE1":40,"MSE2":40,"CA1":8,"CA2":8,"CA3_ATT":4,"total_MSE":80,"total_CA":20,"ESE":100,"total":200},
         "total_hours": 75,
         "units": [
           {"unit_no":1,"title":"Integrated AWS Cloud Foundations","hours":15,"topics":["Cloud computing fundamentals, core AWS services","Infrastructure design, security best practices","Cost management, cloud adoption strategies","Infrastructure as Code (IaC)"]},
@@ -77,6 +84,7 @@
         "course_name": "Foundation of iOS App Development",
         "elective_track": "Applied Apple Technologies (Powered by Apple)",
         "prerequisite": "NA",
+        "marks": {"MSE1":40,"MSE2":40,"CA1":8,"CA2":8,"CA3_ATT":4,"total_MSE":80,"total_CA":20,"ESE":100,"total":200},
         "total_hours": 75,
         "content_covered": ["Introduction to iOS Ecosystem, Xcode Interface, Project Structure","Swift Basics: Syntax, Variables, Data Types","Control Flow: Conditions, Loops, Switch","Functions, Closures (Basics), Error Handling","Collections in Swift: Arrays, Dictionaries, Sets","Object-Oriented Swift: Classes, Structs, Enums","Optionals, Protocols, Extensions","UIKit Essentials: Views, View Controllers, Storyboards","TableView & CollectionView","Auto Layout Basics: Constraints, Adaptive UI","Mini App Project: Calculator / Notes / Gallery"],
         "textbooks": ["Develop in Swift (Official Apple Books) - Apple's official series","Swift Apprentice (Kodeco) - foundational book on Swift language"]
@@ -87,6 +95,7 @@
         "elective_track": "Cyber Security (Powered by NSDC)",
         "prerequisite": "NA",
         "certification_prep": "Microsoft Azure Fundamentals (AZ-900)",
+        "marks": {"MSE1":40,"MSE2":40,"CA1":8,"CA2":8,"CA3_ATT":4,"total_MSE":80,"total_CA":20,"ESE":100,"total":200},
         "total_hours": 75,
         "units": [
           {"unit_no":1,"title":"Introduction to Cloud Computing and Azure","hours":15,"topics":["Evolution of Cloud Computing","Cloud Service Models: IaaS, PaaS, SaaS","Cloud Deployment Models: Public, Private, Hybrid","Overview of Microsoft Azure","Azure Global Infrastructure (Regions, Availability Zones)","Azure Portal, Azure CLI, Azure Resource Manager (ARM)"]},
