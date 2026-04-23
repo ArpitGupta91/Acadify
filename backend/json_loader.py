@@ -16,19 +16,16 @@ def is_kiet_holiday(check_date: date, holiday_list: list) -> bool:
     """
     Returns True if the given date is a KIET holiday.
     Rules:
-    - Sunday: Always off but NOT listed as a named holiday
-    - Saturday: ONLY 1st and 3rd Saturday of the month are holidays
+    - Sunday: Not treated as named holiday here
+    - Saturday: Excluded from holiday responses
     - Other days: Check against official holiday_list from JSON
     """
     # Sunday - exclude from next holiday results
     if check_date.weekday() == 6:
         return False
 
-    # Saturday logic - only 1st and 3rd Saturday
+    # Saturday is excluded from API/chat holiday responses.
     if check_date.weekday() == 5:
-        occurrence = (check_date.day - 1) // 7 + 1
-        if occurrence in [1, 3]:
-            return True
         return False
 
     # All other days - check official holiday list
@@ -43,8 +40,8 @@ def is_kiet_holiday(check_date: date, holiday_list: list) -> bool:
 def get_next_holiday(from_date: date, holiday_list: list) -> dict:
     """
     Returns the next upcoming holiday from a given date.
-    Skips Sundays entirely.
-    Only returns 1st/3rd Saturdays or officially named holidays.
+    Skips Sundays and Saturdays.
+    Only returns officially named non-Saturday holidays.
     """
     check = from_date + timedelta(days=1)
     max_days = 90
@@ -57,23 +54,15 @@ def get_next_holiday(from_date: date, holiday_list: list) -> dict:
             check += timedelta(days=1)
             continue
 
-        # Check if 1st or 3rd Saturday
+        # Skip Saturdays completely.
         if weekday == 5:
-            occurrence = (check.day - 1) // 7 + 1
-            if occurrence in [1, 3]:
-                label = "1st" if occurrence == 1 else "3rd"
-                return {
-                    "date": check.strftime("%d %B %Y"),
-                    "name": label + " Saturday (Holiday)",
-                    "day": check.strftime("%A"),
-                }
             check += timedelta(days=1)
             continue
 
         # Check official holiday list for all other weekdays
         for holiday in holiday_list:
             holiday_date = parse_holiday_date(holiday.get("date", ""))
-            if holiday_date and holiday_date.date() == check:
+            if holiday_date and holiday_date.date() == check and check.weekday() != 5:
                 return {
                     "date": check.strftime("%d %B %Y"),
                     "name": holiday.get("reason", holiday.get("name", "Holiday")),

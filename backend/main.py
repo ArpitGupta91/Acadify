@@ -58,6 +58,42 @@ def _find_json_payload(key_fragment: str) -> Optional[Dict[str, Any]]:
     return None
 
 
+def _normalized_bos(value: Any) -> str:
+    return "".join(ch for ch in str(value).lower() if ch.isalpha())
+
+
+def _get_fourth_sem_cse_elective_subjects(payload: Dict[str, Any]) -> List[Dict[str, Any]]:
+    options = payload.get("professional_elective_options", {}).get("options", [])
+    cse_codes: List[str] = []
+    for option in options:
+        if not isinstance(option, dict):
+            continue
+        bos = _normalized_bos(option.get("BOS", ""))
+        if bos == "cse":
+            code = str(option.get("course_code", "")).upper().strip()
+            if code:
+                cse_codes.append(code)
+
+    subjects: List[Dict[str, Any]] = []
+    for code in cse_codes:
+        subject_payload = JSON_DATA.get(code)
+        if not isinstance(subject_payload, dict):
+            continue
+        marks = subject_payload.get("marks", {})
+        subjects.append(
+            {
+                "code": code,
+                "name": subject_payload.get("course_name", code),
+                "credits": subject_payload.get("credits", 4),
+                "total_marks": marks.get("total", 200) if isinstance(marks, dict) else 200,
+                "type": "Blended",
+                "category": "Professional Elective",
+            }
+        )
+
+    return subjects
+
+
 def _month_from_date(date_text: str) -> str:
     normalized = date_text.lower()
     month_alias = {
@@ -242,6 +278,14 @@ def get_subjects(semester: str) -> Dict[str, Any]:
         raise HTTPException(status_code=404, detail=f"Semester {sem} structured overview not found.")
 
     course_summary = payload.get("course_summary", [])
+    if sem == "4":
+        # Replace generic PE-I row with actual PE options for CSE BOS.
+        course_summary = [
+            item
+            for item in course_summary
+            if str(item.get("code", "")).upper().strip() != "PE-I"
+        ]
+        course_summary.extend(_get_fourth_sem_cse_elective_subjects(payload))
     subjects = [
         {
             "code": item.get("code"),
