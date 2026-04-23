@@ -1,6 +1,6 @@
 import json
 import re
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -10,6 +10,83 @@ except ImportError:
     from config import BRANCH, STRUCTURED_DATA_FOLDER
 
 JSON_FILE_INDEX: Dict[str, str] = {}
+
+
+def is_kiet_holiday(check_date: date, holiday_list: list) -> bool:
+    """
+    Returns True if the given date is a KIET holiday.
+    Rules:
+    - Sunday: Always off but NOT listed as a named holiday
+    - Saturday: ONLY 1st and 3rd Saturday of the month are holidays
+    - Other days: Check against official holiday_list from JSON
+    """
+    # Sunday - exclude from next holiday results
+    if check_date.weekday() == 6:
+        return False
+
+    # Saturday logic - only 1st and 3rd Saturday
+    if check_date.weekday() == 5:
+        occurrence = (check_date.day - 1) // 7 + 1
+        if occurrence in [1, 3]:
+            return True
+        return False
+
+    # All other days - check official holiday list
+    for holiday in holiday_list:
+        holiday_date = parse_holiday_date(holiday.get("date", ""))
+        if holiday_date and holiday_date.date() == check_date:
+            return True
+
+    return False
+
+
+def get_next_holiday(from_date: date, holiday_list: list) -> dict:
+    """
+    Returns the next upcoming holiday from a given date.
+    Skips Sundays entirely.
+    Only returns 1st/3rd Saturdays or officially named holidays.
+    """
+    check = from_date + timedelta(days=1)
+    max_days = 90
+
+    for _ in range(max_days):
+        weekday = check.weekday()
+
+        # Skip Sundays completely
+        if weekday == 6:
+            check += timedelta(days=1)
+            continue
+
+        # Check if 1st or 3rd Saturday
+        if weekday == 5:
+            occurrence = (check.day - 1) // 7 + 1
+            if occurrence in [1, 3]:
+                label = "1st" if occurrence == 1 else "3rd"
+                return {
+                    "date": check.strftime("%d %B %Y"),
+                    "name": label + " Saturday (Holiday)",
+                    "day": check.strftime("%A"),
+                }
+            check += timedelta(days=1)
+            continue
+
+        # Check official holiday list for all other weekdays
+        for holiday in holiday_list:
+            holiday_date = parse_holiday_date(holiday.get("date", ""))
+            if holiday_date and holiday_date.date() == check:
+                return {
+                    "date": check.strftime("%d %B %Y"),
+                    "name": holiday.get("reason", holiday.get("name", "Holiday")),
+                    "day": check.strftime("%A"),
+                }
+
+        check += timedelta(days=1)
+
+    return {
+        "date": "Unknown",
+        "name": "No upcoming holiday found in next 90 days",
+        "day": "",
+    }
 
 # =========================================================
 # SUBJECT CODE MAPPING - FOR CONSISTENT LOOKUPS
@@ -50,6 +127,50 @@ SUBJECT_CODE_MAP = {
     "cn": "IT302L",
     "it302l": "IT302L",
 }
+
+PROFESSIONAL_ELECTIVE_KEYWORDS = [
+    "professional elective",
+    "pe-1",
+    "pe1",
+    "elective",
+    "intelligent systems",
+    "intelligent system",
+    "intelligent systems with text",
+    "intelligent system with text",
+    "intelligent systems with vision",
+    "intelligent system with vision",
+    "text and vision",
+    "vision api",
+    "full stack",
+    "full stack development",
+    "react",
+    "next.js",
+    "nextjs",
+    "blockchain",
+    "cyber security",
+    "cybersecurity",
+    "pe subject",
+    "elective subject",
+    "elective syllabus",
+    "professional elective syllabus",
+    "cs307e",
+    "cs306e",
+    "cs305e",
+    "cs308e",
+    "cs318e",
+    "cs304e",
+    "cs335e",
+    "cs321e",
+    "it306e",
+]
+
+
+def is_professional_elective_query(query: str) -> bool:
+    query_lower = query.lower().strip()
+    for keyword in PROFESSIONAL_ELECTIVE_KEYWORDS:
+        if keyword in query_lower:
+            return True
+    return False
 
 # =========================================================
 # DATE PARSING & HOLIDAY/EXAM HELPERS
@@ -139,7 +260,39 @@ def find_course_by_code(json_data: Dict[str, Dict[str, Any]], subject_code: str,
         return theory_result
     if not prefer_theory and lab_result:
         return lab_result
-    return theory_result or lab_result
+
+    fallback = theory_result or lab_result
+    if fallback:
+        return fallback
+
+    # If not found in main data, check professional electives.
+    normalized_code = str(subject_code).upper()
+    pe_data = (
+        json_data.get("professional_electives")
+        or json_data.get("4th_sem_professional_elective")
+        or json_data.get("4thsem_professional_electives")
+    )
+    if isinstance(pe_data, list):
+        for subject in pe_data:
+            if not isinstance(subject, dict):
+                continue
+            if str(subject.get("course_code", "")).upper() == normalized_code:
+                return subject
+    elif isinstance(pe_data, dict):
+        subjects = pe_data.get("subjects")
+        if not isinstance(subjects, list):
+            subjects = pe_data.get("electives")
+        if not isinstance(subjects, list):
+            pe1 = pe_data.get("professional_elective_1", {})
+            if isinstance(pe1, dict):
+                subjects = pe1.get("electives", [])
+        for subject in subjects or []:
+            if not isinstance(subject, dict):
+                continue
+            if str(subject.get("course_code", "")).upper() == normalized_code:
+                return subject
+
+    return None
 
 
 def find_course_in_nested(json_data: Dict[str, Dict[str, Any]], subject_code: str) -> Optional[Dict[str, Any]]:
@@ -199,44 +352,6 @@ def get_specific_unit(json_data: Dict[str, Dict[str, Any]], subject_code: str,
                 "unit": unit
             }
     return None
-
-
-def get_next_holiday(json_data: Dict[str, Dict[str, Any]]) -> Optional[Dict[str, Any]]:
-    """
-    Returns the single next upcoming holiday from today.
-    """
-    today = datetime.now()
-    _, calendar = _get_item_by_key_fragment(json_data, "academic_calendar")
-    if not calendar:
-        return None
-    holidays = calendar.get("all_holidays_consolidated", [])
-    
-    upcoming = []
-    for h in holidays:
-        date_str = h.get("date", "")
-        parsed = parse_holiday_date(date_str)
-        if parsed and parsed.date() >= today.date():
-            upcoming.append({
-                "date": date_str,
-                "day": h.get("day", ""),
-                "reason": h.get("reason", ""),
-                "parsed_date": parsed
-            })
-    
-    if not upcoming:
-        return None
-    
-    # Sort by date and return the nearest one
-    upcoming.sort(key=lambda x: x["parsed_date"])
-    next_h = upcoming[0]
-    
-    # Also get next 3 for context
-    next_few = upcoming[:4]
-    
-    return {
-        "next": next_h,
-        "upcoming_few": next_few
-    }
 
 
 def get_next_exam(json_data: Dict[str, Dict[str, Any]]) -> Optional[Dict[str, Any]]:
@@ -427,6 +542,47 @@ def load_all_json_data() -> Dict[str, Dict[str, Any]]:
         except Exception as error:
             print(f"[WARN] Failed to load JSON file '{json_file.name}': {error}")
 
+    # Explicitly load professional elective file aliases so routing can use stable keys.
+    pe_candidates = [
+        "4th_sem_professional_elective.json",
+        "4th_sem_professional_electives.json",
+        "12_4thSem_Professional_Electives.json",
+    ]
+    for pe_name in pe_candidates:
+        pe_path = structured_dir / pe_name
+        if not pe_path.exists():
+            continue
+
+        try:
+            with pe_path.open("r", encoding="utf-8") as file:
+                pe_data = json.load(file)
+
+            json_data["professional_electives"] = pe_data
+            json_data["4th_sem_professional_elective"] = pe_data
+            JSON_FILE_INDEX["professional_electives"] = pe_path.name
+            JSON_FILE_INDEX["4th_sem_professional_elective"] = pe_path.name
+
+            subjects: List[Dict[str, Any]] = []
+            if isinstance(pe_data, list):
+                subjects = [s for s in pe_data if isinstance(s, dict)]
+            elif isinstance(pe_data, dict):
+                nested_subjects = pe_data.get("subjects")
+                if not isinstance(nested_subjects, list):
+                    nested_subjects = pe_data.get("electives")
+                if not isinstance(nested_subjects, list):
+                    pe1 = pe_data.get("professional_elective_1", {})
+                    if isinstance(pe1, dict):
+                        nested_subjects = pe1.get("electives", [])
+                subjects = [s for s in (nested_subjects or []) if isinstance(s, dict)]
+
+            for subject in subjects:
+                code = str(subject.get("course_code", "")).strip().upper()
+                if code:
+                    json_data[code] = subject
+                    JSON_FILE_INDEX[code] = pe_path.name
+        except Exception as error:
+            print(f"[WARN] Failed to explicitly load professional elective file '{pe_name}': {error}")
+
     print(f"Loaded {len(json_data)} JSON files from '{structured_dir}'.")
     return json_data
 
@@ -549,27 +705,19 @@ def search_json(query: str, json_data: Dict[str, Dict[str, Any]],
         "next off day", "next leave", "coming holiday"
     ]
     if any(kw in query_lower for kw in next_holiday_keywords):
-        result = get_next_holiday(json_data)
-        if result:
-            next_h = result["next"]
-            upcoming = result["upcoming_few"]
-            
-            answer = f"🗓️ **Next Holiday:**\n"
-            answer += f"📅 {next_h['date']} ({next_h['day']})\n"
-            answer += f"🎉 {next_h['reason']}\n\n"
-            
-            if len(upcoming) > 1:
-                answer += "**Upcoming holidays after that:**\n"
-                for h in upcoming[1:]:
-                    answer += f"• {h['date']} ({h['day']}) - {h['reason']}\n"
-            
-            answer += "\n📌 For CSE/CS branch, Even Sem 2025-26"
-            
-            return {
-                "found": True,
-                "source": f"JSON - {JSON_FILE_INDEX.get(calendar_key or '', 'academic_calendar.json')}",
-                "formatted_answer": answer
-            }
+        holiday_list = calendar.get("all_holidays_consolidated", []) if calendar else []
+        result = get_next_holiday(date.today(), holiday_list)
+
+        answer = (
+            "Next Holiday: " + result["name"] + "\n"
+            "Date: " + result["date"] + " (" + result["day"] + ")"
+        )
+
+        return {
+            "found": True,
+            "source": f"JSON - {JSON_FILE_INDEX.get(calendar_key or '', 'academic_calendar.json')}",
+            "formatted_answer": answer,
+        }
 
     # ========== SPECIAL: Next Exam ==========
     next_exam_keywords = [

@@ -52,6 +52,81 @@ function formatText(text) {
   return (text || "").replace(/\n/g, "<br />");
 }
 
+function formatBotResponse(text) {
+  if (!text) return "";
+
+  let formatted = text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  formatted = formatted.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  formatted = formatted.replace(/\*(.*?)\*/g, "<em>$1</em>");
+
+  formatted = formatted.replace(/((\d+\.\s+.+\n?)+)/g, function(match) {
+    const items = match.trim().split("\n").filter((line) => line.trim());
+    const listItems = items.map(function(item) {
+      return "<li>" + item.replace(/^\d+\.\s+/, "") + "</li>";
+    }).join("");
+    return "<ol>" + listItems + "</ol>";
+  });
+
+  formatted = formatted.replace(/((\-\s+.+\n?)+)/g, function(match) {
+    const items = match.trim().split("\n").filter((line) => line.trim());
+    const listItems = items.map(function(item) {
+      return "<li>" + item.replace(/^[\-\*]\s+/, "") + "</li>";
+    }).join("");
+    return "<ul>" + listItems + "</ul>";
+  });
+
+  formatted = formatted.replace(
+    /^(Hours|Credits|Total Hours|Semester|Course Code|Type):\s*(.+)$/gm,
+    '<span class="response-label">$1:</span> <span class="response-value">$2</span><br>'
+  );
+
+  formatted = formatted.replace(/\n\n/g, '</p><p class="response-para">');
+  formatted = formatted.replace(/\n/g, "<br>");
+  formatted = '<p class="response-para">' + formatted + "</p>";
+  formatted = formatted.replace(/<p class="response-para"><\/p>/g, "");
+
+  return formatted;
+}
+
+function createBotMessageHTML(responseData) {
+  const text = responseData?.response || responseData?.answer || responseData || "";
+  const sourceType = responseData?.source_type || responseData?.type || "json_lookup";
+  const sources = Array.isArray(responseData?.sources) ? responseData.sources : [];
+
+  const formattedText = formatBotResponse(text);
+
+  let badgeHTML = "";
+  let sourceLineHTML = "";
+
+  if (sourceType === "json_lookup" || sourceType === "json") {
+    badgeHTML = '<span class="source-badge"><span class="badge-icon">📁</span> JSON Data</span>';
+  } else if (sourceType === "rag") {
+    badgeHTML = '<span class="source-badge"><span class="badge-icon">🤖</span> AI Response</span>';
+  } else if (sourceType === "calculator") {
+    badgeHTML = '<span class="source-badge"><span class="badge-icon">🧮</span> Calculator</span>';
+  } else {
+    badgeHTML = '<span class="source-badge"><span class="badge-icon">📁</span> JSON Data</span>';
+  }
+
+  if (sources.length > 0) {
+    sourceLineHTML = '<div class="source-line">Source: ' + sources.join(", ") + "</div>";
+  }
+
+  const showFooter = sourceType !== "greeting";
+  const footerHTML = showFooter && (badgeHTML || sourceLineHTML)
+    ? '<div class="response-footer">' + badgeHTML + sourceLineHTML + "</div>"
+    : "";
+
+  return '<div class="bot-response-card">'
+    + '<div class="response-body message-text">' + formattedText + "</div>"
+    + footerHTML
+    + "</div>";
+}
+
 function sourceTag(type, sources = []) {
   if (type === "json_lookup") {
     return { label: "📁 JSON Data", file: sources[0] || "Structured JSON" };
@@ -109,20 +184,15 @@ function setConnectionStatus(ok, text = "Connected") {
 
 function renderMessage(text, meta = {}, isBot = true) {
   const wrap = document.createElement("div");
-  wrap.className = `message ${isBot ? "message-bot" : "message-user"}`;
-  wrap.innerHTML = formatText(text);
-
+  wrap.className = `message ${isBot ? "message-bot bot-message" : "message-user"}`;
   if (isBot) {
-    const tagInfo = sourceTag(meta.type, meta.sources || []);
-    const tag = document.createElement("span");
-    tag.className = "message-source-tag";
-    tag.textContent = tagInfo.label;
-    wrap.appendChild(tag);
-
-    const file = document.createElement("div");
-    file.className = "message-source-file";
-    file.textContent = `Source: ${tagInfo.file}`;
-    wrap.appendChild(file);
+    wrap.innerHTML = createBotMessageHTML({
+      answer: text,
+      type: meta.type,
+      sources: meta.sources || [],
+    });
+  } else {
+    wrap.innerHTML = formatText(text);
   }
 
   el.chatContainer.appendChild(wrap);
@@ -131,6 +201,26 @@ function renderMessage(text, meta = {}, isBot = true) {
 
 function showTyping(show) {
   el.typingIndicator.classList.toggle("hidden", !show);
+}
+
+// Show three bouncing dots while waiting for API response
+function showTypingIndicator() {
+  const chatMessages = document.getElementById("chat-messages") || document.querySelector(".chat-messages") || el.chatContainer;
+  if (!chatMessages) {
+    return;
+  }
+  const typingDiv = document.createElement("div");
+  typingDiv.id = "typing-indicator";
+  typingDiv.className = "message bot-message";
+  typingDiv.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+  chatMessages.appendChild(typingDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Remove the bouncing dots
+function removeTypingIndicator() {
+  const indicator = document.getElementById("typing-indicator");
+  if (indicator) indicator.remove();
 }
 
 async function sendMessage(query) {
@@ -142,23 +232,34 @@ async function sendMessage(query) {
   isLoading = true;
   renderMessage(clean, {}, false);
   el.chatInput.value = "";
-  showTyping(true);
+  el.sendBtn.disabled = true;
+  showTypingIndicator();
 
   try {
     const data = await apiPost("/chat", {
       query: query,
       session_id: SESSION_ID
     });
-    renderMessage(data.answer || "No answer found.", { type: data.type, sources: data.sources || [] }, true);
+
+    removeTypingIndicator();
+    const botWrap = document.createElement("div");
+    botWrap.className = "message message-bot bot-message";
+    botWrap.innerHTML = createBotMessageHTML(data);
+
+    el.chatContainer.appendChild(botWrap);
+    el.chatContainer.scrollTop = el.chatContainer.scrollHeight;
+    el.sendBtn.disabled = false;
+
     chatHistory.push({ query: clean, answer: data.answer, type: data.type, timestamp: data.timestamp });
   } catch (error) {
+    removeTypingIndicator();
     renderMessage(
       `Sorry, I couldn't reach the backend service. Please ensure FastAPI is running on ${API_BASE}.\nError: ${error.message}`,
       { type: "not_found", sources: [] },
       true
     );
+    el.sendBtn.disabled = false;
   } finally {
-    showTyping(false);
     isLoading = false;
   }
 }
@@ -393,25 +494,50 @@ async function calculateAttendance() {
   }
 }
 
-function gradeToPoints(grade) {
-  const map = { O: 10, "A+": 9, A: 8, "B+": 7, B: 6, C: 5, P: 4, F: 0 };
-  return map[grade] ?? 0;
+const KIET_GRADES = [
+  { value: "A+", label: "A+ (10 points)", points: 10 },
+  { value: "A", label: "A  (9 points)", points: 9 },
+  { value: "B+", label: "B+ (8 points)", points: 8 },
+  { value: "B", label: "B  (7 points)", points: 7 },
+  { value: "C+", label: "C+ (6 points)", points: 6 },
+  { value: "C", label: "C  (5 points)", points: 5 },
+  { value: "D", label: "D  (4 points)", points: 4 },
+  { value: "FF", label: "FF (Fail - 0)", points: 0 },
+  { value: "NC", label: "NC (Non Credit)", points: null },
+  { value: "AU", label: "AU (Audit)", points: null }
+];
+
+function calculateCGPAFrontend(subjects) {
+  let totalEGP = 0;
+  let totalCredits = 0;
+
+  subjects.forEach(function(sub) {
+    const gradeObj = KIET_GRADES.find(function(g) { return g.value === sub.grade; });
+    if (!gradeObj || gradeObj.points === null) return;
+
+    totalEGP += sub.credits * gradeObj.points;
+    totalCredits += sub.credits;
+  });
+
+  if (totalCredits === 0) return { sgpa: 0, percentage: 0 };
+
+  const sgpa = (totalEGP / totalCredits).toFixed(2);
+  const percentage = (parseFloat(sgpa) * 10).toFixed(2);
+
+  return { sgpa: sgpa, percentage: percentage, totalEGP: totalEGP, totalCredits: totalCredits };
 }
 
 function addCgpaRow(subject = { name: "", credits: 3, grade: "A" }) {
+  const gradeOptions = KIET_GRADES
+    .map((grade) => `<option value="${grade.value}" ${subject.grade === grade.value ? "selected" : ""}>${grade.label}</option>`)
+    .join("");
+
   const row = document.createElement("div");
   row.className = "cgpa-row";
   row.innerHTML = `
     <input class="cgpa-name" type="text" placeholder="Subject Name" value="${subject.name}" />
     <select class="cgpa-grade">
-      <option ${subject.grade === "O" ? "selected" : ""}>O</option>
-      <option ${subject.grade === "A+" ? "selected" : ""}>A+</option>
-      <option ${subject.grade === "A" ? "selected" : ""}>A</option>
-      <option ${subject.grade === "B+" ? "selected" : ""}>B+</option>
-      <option ${subject.grade === "B" ? "selected" : ""}>B</option>
-      <option ${subject.grade === "C" ? "selected" : ""}>C</option>
-      <option ${subject.grade === "P" ? "selected" : ""}>P</option>
-      <option ${subject.grade === "F" ? "selected" : ""}>F</option>
+      ${gradeOptions}
     </select>
     <input class="cgpa-credits" type="number" min="1" max="4" step="1" value="${subject.credits}" />
     <button class="icon-btn cgpa-remove">×</button>
@@ -439,28 +565,18 @@ async function calculateCGPA() {
       return;
     }
 
-    subjects.push({ name, grade_points: gradeToPoints(grade), credits });
+    subjects.push({ name, grade, credits });
   }
 
   try {
-    const result = await apiPost("/calculate/cgpa", { subjects });
-    const gradeMeaning = {
-      O: "Outstanding",
-      "A+": "Excellent",
-      A: "Very Good",
-      "B+": "Good",
-      B: "Above Average",
-      C: "Average",
-      P: "Pass",
-      F: "Fail",
-    };
+    const result = calculateCGPAFrontend(subjects);
 
     el.cgpaResult.classList.remove("hidden");
     el.cgpaResult.innerHTML = `
-      <h3 style="margin: 0 0 8px;">CGPA: ${Number(result.cgpa).toFixed(2)}</h3>
-      <p><strong>Grade:</strong> ${result.grade_letter} (${gradeMeaning[result.grade_letter] || ""})</p>
-      <p><strong>Total Credits:</strong> ${result.total_credits}</p>
-      <p><strong>Weighted Score:</strong> ${result.weighted_sum}</p>
+      <h3 style="margin: 0 0 8px;">SGPA: ${result.sgpa}</h3>
+      <p><strong>Equivalent Percentage:</strong> ${result.percentage}%</p>
+      <p><strong>Formula:</strong> EGP / Credits = SGPA | CGPA x 10 = Percentage</p>
+      <p><strong>EGP:</strong> ${result.totalEGP || 0} | <strong>Total Credits:</strong> ${result.totalCredits || 0}</p>
     `;
   } catch (error) {
     renderMessage(`CGPA calculation failed: ${error.message}`, { type: "calculator", sources: [] }, true);

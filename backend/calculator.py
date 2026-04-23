@@ -79,68 +79,85 @@ class AttendanceCalculator:
 
 
 class CGPACalculator:
+    # KIET Official Grade Scale (from marksheet)
     GRADE_POINTS = {
-        "O": 10,
-        "A+": 9,
-        "A": 8,
-        "B+": 7,
-        "B": 6,
+        "A+": 10,
+        "A": 9,
+        "B+": 8,
+        "B": 7,
+        "C+": 6,
         "C": 5,
-        "P": 4,
-        "F": 0,
+        "D": 4,
+        "FF": 0,
+        "DT": 0,
+        "AB": 0,
+        "AU": None,
+        "AR": 0,
+        "NC": None,
     }
 
-    @classmethod
-    def _cgpa_to_letter(cls, cgpa: float) -> str:
-        if cgpa >= 9.5:
-            return "O"
-        if cgpa >= 8.5:
-            return "A+"
-        if cgpa >= 7.5:
-            return "A"
-        if cgpa >= 6.5:
-            return "B+"
-        if cgpa >= 5.5:
-            return "B"
-        if cgpa >= 4.5:
-            return "C"
-        if cgpa >= 4.0:
-            return "P"
-        return "F"
+    def calculate_sgpa(self, courses: list) -> dict:
+        """
+        courses = [{"name": "DAA", "credits": 3, "grade": "A+"}, ...]
+        NC and AU courses are excluded from calculation.
+        Returns SGPA rounded to 2 decimal places.
+        """
+        total_egp = 0
+        total_credits = 0
 
-    @classmethod
-    def calculate(cls, subjects: List[Dict]) -> Dict:
-        if not subjects:
-            raise ValueError("At least one subject is required to calculate CGPA.")
+        for course in courses:
+            grade = course.get("grade", "").strip().upper()
+            credits = course.get("credits", 0)
+            grade_point = self.GRADE_POINTS.get(grade)
 
-        weighted_sum = 0.0
-        total_credits = 0.0
+            if grade_point is None:
+                continue
 
-        for subject in subjects:
-            name = str(subject.get("name", "")).strip() or "Unnamed Subject"
-            grade_points = float(subject.get("grade_points", 0))
-            credits = float(subject.get("credits", 0))
-
-            if credits <= 0:
-                raise ValueError(f"Credits must be greater than 0 for subject '{name}'.")
-            if grade_points < 0 or grade_points > 10:
-                raise ValueError(f"Grade points must be between 0 and 10 for subject '{name}'.")
-
-            weighted_sum += grade_points * credits
+            total_egp += credits * grade_point
             total_credits += credits
 
-        if total_credits <= 0:
-            raise ValueError("Total credits must be greater than 0.")
+        if total_credits == 0:
+            return {"sgpa": 0.0, "total_credits": 0, "total_egp": 0, "percentage": 0.0}
 
-        cgpa = weighted_sum / total_credits
-        grade_letter = cls._cgpa_to_letter(cgpa)
+        sgpa = round(total_egp / total_credits, 2)
+        percentage = round(sgpa * 10, 2)
 
         return {
-            "cgpa": round(cgpa, 2),
-            "total_credits": round(total_credits, 2),
-            "weighted_sum": round(weighted_sum, 2),
-            "grade_letter": grade_letter,
-            "grade_scale": cls.GRADE_POINTS,
+            "sgpa": sgpa,
+            "total_credits": total_credits,
+            "total_egp": total_egp,
+            "percentage": percentage,
+            "message": "Your SGPA is " + str(sgpa) + " (" + str(percentage) + "%)",
+        }
+
+    def calculate_cgpa(self, all_semesters: list) -> dict:
+        """
+        all_semesters = list of semester course lists
+        Calculates cumulative CGPA across all completed semesters.
+        """
+        grand_egp = 0
+        grand_credits = 0
+
+        for semester_courses in all_semesters:
+            for course in semester_courses:
+                grade = course.get("grade", "").strip().upper()
+                credits = course.get("credits", 0)
+                grade_point = self.GRADE_POINTS.get(grade)
+                if grade_point is None:
+                    continue
+                grand_egp += credits * grade_point
+                grand_credits += credits
+
+        if grand_credits == 0:
+            return {"cgpa": 0.0, "percentage": 0.0}
+
+        cgpa = round(grand_egp / grand_credits, 2)
+        percentage = round(cgpa * 10, 2)
+
+        return {
+            "cgpa": cgpa,
+            "percentage": percentage,
+            "message": "Your CGPA is " + str(cgpa) + " (" + str(percentage) + "%)",
         }
 
     @staticmethod

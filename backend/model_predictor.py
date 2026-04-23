@@ -51,6 +51,25 @@ def predict_subject(query: str) -> tuple:
     Returns (subject_code, confidence_score)
     Example: ("CS401L", 0.91)
     """
+    query_lower = (query or "").lower()
+
+    # HARD OVERRIDE: Professional elective keywords always map to PE.
+    pe_keywords = [
+        "professional elective", "pe-1", "pe1", "elective",
+        "intelligent systems with text", "intelligent systems with vision",
+        "text and vision api", "full stack", "next.js", "nextjs",
+        "blockchain", "cs307e", "cs306e", "cs305e", "cs308e",
+        "cs318e", "cs304e", "cs335e", "cs321e", "it306e",
+    ]
+    for keyword in pe_keywords:
+        if keyword in query_lower:
+            return ("PROFESSIONAL_ELECTIVE", 1.0)
+
+    # HARD OVERRIDE: Only map to CS205B on explicit intent.
+    cs205b_exact = ["cs205b", "ai and its applications", "artificial intelligence and its applications"]
+    if any(keyword in query_lower for keyword in cs205b_exact):
+        return ("CS205B", 1.0)
+
     if _subject_model is None:
         return ("unknown", 0.0)
 

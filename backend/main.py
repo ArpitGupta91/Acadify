@@ -111,7 +111,7 @@ def _sort_holidays(holidays: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 def _normalize_chat_type(raw_type: str) -> str:
-    allowed = {"json_lookup", "calculator", "rag", "not_found"}
+    allowed = {"json_lookup", "calculator", "rag", "not_found", "greeting", "out_of_scope"}
     if raw_type in allowed:
         return raw_type
     if "rag" in raw_type:
@@ -131,7 +131,7 @@ class AttendanceRequest(BaseModel):
 
 class SubjectInput(BaseModel):
     name: str
-    grade_points: float = Field(..., ge=0, le=10)
+    grade: str
     credits: float = Field(..., gt=0)
 
 
@@ -393,7 +393,8 @@ def attendance_endpoint(request: AttendanceRequest) -> Dict[str, Any]:
 def cgpa_endpoint(request: CGPARequest) -> Dict[str, Any]:
     try:
         subject_payload = [s.model_dump() for s in request.subjects]
-        return CGPACalculator.calculate(subject_payload)
+        calculator = CGPACalculator()
+        return calculator.calculate_sgpa(subject_payload)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
     except Exception as error:
