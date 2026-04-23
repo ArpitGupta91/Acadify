@@ -12,6 +12,34 @@ let jsonData = {
   subjects4: [],
 };
 
+function expandSemester4ProfessionalElectives(subjects) {
+  const list = Array.isArray(subjects) ? subjects : [];
+  const hasGenericPE = list.some(
+    (subject) => String(subject?.code || "").toUpperCase() === "PE-I"
+  );
+  if (!hasGenericPE) {
+    return list;
+  }
+
+  const namedProfessionalElectives = [
+    { code: "CS318E", name: "Frontend Engineering with React & Next" },
+    { code: "CS307E", name: "Intelligent Systems with Text & Vision API" },
+    { code: "CS304E", name: "DevOps Foundations & Version Control" },
+    { code: "CS321E", name: "Foundation of iOS App Development" },
+  ].map((subject) => ({
+    ...subject,
+    credits: 4,
+    total_marks: 200,
+    type: "Blended",
+    category: "Professional Elective",
+  }));
+
+  const withoutGeneric = list.filter(
+    (subject) => String(subject?.code || "").toUpperCase() !== "PE-I"
+  );
+  return [...withoutGeneric, ...namedProfessionalElectives];
+}
+
 const el = {
   connectionDot: document.getElementById("connectionDot"),
   connectionText: document.getElementById("connectionText"),
@@ -648,7 +676,7 @@ async function init() {
     jsonData.examSchedule = exam;
     jsonData.holidays = holidaysRes.holidays || [];
     jsonData.subjects3 = sem3.subjects || [];
-    jsonData.subjects4 = sem4.subjects || [];
+    jsonData.subjects4 = expandSemester4ProfessionalElectives(sem4.subjects || []);
 
     renderExamCards(jsonData.examSchedule);
     renderHolidayCards(jsonData.holidays);
