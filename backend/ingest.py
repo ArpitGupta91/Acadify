@@ -11,7 +11,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
 try:
-    from backend.config import (
+    from .config import (
         CHUNK_OVERLAP,
         CHUNK_SIZE,
         EMBEDDING_MODEL,

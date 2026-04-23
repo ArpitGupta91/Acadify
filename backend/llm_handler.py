@@ -1,7 +1,7 @@
 from groq import Groq
 
 try:
-    from backend.config import BRANCH, COLLEGE_NAME, GROQ_API_KEY, GROQ_MODEL
+    from .config import BRANCH, COLLEGE_NAME, GROQ_API_KEY, GROQ_MODEL
 except ImportError:
     from config import BRANCH, COLLEGE_NAME, GROQ_API_KEY, GROQ_MODEL
 

@@ -2,11 +2,11 @@ import re
 from typing import Any, Dict
 
 try:
-    from backend.calculator import AttendanceCalculator
-    from backend.json_loader import SUBJECT_CODE_MAP, load_all_json_data, search_json, session_context
-    from backend.llm_handler import get_llm_response
-    from backend.model_predictor import load_models, predict_both
-    from backend.retriever import retrieve_context
+    from .calculator import AttendanceCalculator
+    from .json_loader import SUBJECT_CODE_MAP, load_all_json_data, search_json, session_context
+    from .llm_handler import get_llm_response
+    from .model_predictor import load_models, predict_both
+    from .retriever import retrieve_context
 except ImportError:
     from calculator import AttendanceCalculator
     from json_loader import SUBJECT_CODE_MAP, load_all_json_data, search_json, session_context

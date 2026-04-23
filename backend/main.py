@@ -7,11 +7,11 @@ from fastapi import BackgroundTasks, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from backend.calculator import AttendanceCalculator, CGPACalculator
-from backend.chat_handler import handle_chat
-from backend.config import BRANCH, PDF_FOLDER
-from backend.ingest import build_vector_store, chunk_documents, load_pdfs, load_vector_store
-from backend.json_loader import load_all_json_data
+from .calculator import AttendanceCalculator, CGPACalculator
+from .chat_handler import handle_chat
+from .config import BRANCH, PDF_FOLDER
+from .ingest import build_vector_store, chunk_documents, load_pdfs, load_vector_store
+from .json_loader import load_all_json_data
 
 app = FastAPI(title="CollegeAI Assistant", version="2.0.0")
 

@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 try:
-    from backend.config import BRANCH, STRUCTURED_DATA_FOLDER
+    from .config import BRANCH, STRUCTURED_DATA_FOLDER
 except ImportError:
     from config import BRANCH, STRUCTURED_DATA_FOLDER
 
