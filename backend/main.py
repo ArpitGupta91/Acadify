@@ -321,6 +321,13 @@ def get_holidays(month: Optional[str] = Query(default=None)) -> Dict[str, Any]:
         raise HTTPException(status_code=404, detail="Academic calendar JSON not found.")
 
     holidays = calendar.get("all_holidays_consolidated", [])
+    holidays = [
+        h
+        for h in holidays
+        if "saturday" not in str(h.get("day", "")).lower()
+        and "saturday" not in str(h.get("reason", "")).lower()
+        and "saturday" not in str(h.get("date", "")).lower()
+    ]
     sorted_holidays = _sort_holidays(holidays)
 
     filtered = sorted_holidays
