@@ -57,6 +57,9 @@ def predict_subject(query: str) -> tuple:
     pe_keywords = [
         "professional elective", "pe-1", "pe1", "elective",
         "intelligent systems with text", "intelligent systems with vision",
+        "intelligent system with text", "intelligent system with vision",
+        "intelligent system syllabus", "intelligent systems syllabus",
+        "intelligent system",
         "text and vision api", "full stack", "next.js", "nextjs",
         "blockchain", "cs307e", "cs306e", "cs305e", "cs308e",
         "cs318e", "cs304e", "cs335e", "cs321e", "it306e",

@@ -170,7 +170,16 @@ def format_professional_elective_response(pe_data: Any, query: str) -> str:
 
     alias_map = {
         "cs318e": ["frontend engineering", "react", "next", "nextjs", "full stack", "full stack development"],
-        "cs307e": ["intelligent systems", "text and vision", "vision api", "text & vision", "text vision"],
+        "cs307e": [
+            "intelligent systems",
+            "intelligent system",
+            "intelligent system syllabus",
+            "intelligent systems syllabus",
+            "text and vision",
+            "vision api",
+            "text & vision",
+            "text vision"
+        ],
         "cs304e": ["devops", "version control", "git workflows"],
         "cs335e": ["aws foundations", "data engineering", "aws"],
         "cs321e": ["ios", "apple", "swift", "xcode"],
