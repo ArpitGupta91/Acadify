@@ -117,14 +117,33 @@
       </section>
 
       <section id="view-attendance" class="view">
-        <div class="card calculator-card">
+        <div class="card calculator-card attendance-card">
           <h2>📊 Attendance Calculator</h2>
-          <p>Minimum 75% required to appear in ESE</p>
-          <label>Total Classes Conducted</label>
-          <input id="attendanceTotal" type="number" min="1" />
-          <label>Classes You Attended</label>
-          <input id="attendanceAttended" type="number" min="0" />
-          <button id="attendanceCalcBtn" class="send-btn">Calculate</button>
+          <p class="attendance-subtitle">Minimum 75% required to appear in ESE</p>
+
+          <div class="attendance-input-grid">
+            <div>
+              <label>Total Classes Conducted</label>
+              <input id="attendanceTotal" type="number" min="1" placeholder="Example: 48" />
+            </div>
+            <div>
+              <label>Classes You Attended</label>
+              <input id="attendanceAttended" type="number" min="0" placeholder="Example: 36" />
+            </div>
+          </div>
+
+          <p id="attendanceTips" class="attendance-tip">Enter values to see your status and next action plan.</p>
+
+          <div id="attendanceFillButtons" class="attendance-presets">
+            <button class="icon-btn attendance-fill" data-total="40" data-attended="30">40 / 30</button>
+            <button class="icon-btn attendance-fill" data-total="50" data-attended="38">50 / 38</button>
+            <button class="icon-btn attendance-fill" data-total="60" data-attended="48">60 / 48</button>
+          </div>
+
+          <div class="actions-row">
+            <button id="attendanceCalcBtn" class="send-btn">Calculate</button>
+            <button id="attendanceResetBtn" class="icon-btn">Reset</button>
+          </div>
         </div>
         <div id="attendanceResult" class="result-card hidden"></div>
       </section>
@@ -170,7 +189,7 @@
     <button class="mobile-nav-item" data-view="cgpa">🎯</button>
   </nav>
   <script>
-  window.API_BASE = "https://acadify-z97q.onrender.com";
+  window.API_BASE = "http://127.0.0.1:8000";
   </script>
 
   <script src="app.js"></script>

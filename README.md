@@ -25,52 +25,111 @@ Hybrid architecture:
 - Python 3.9+
 - pip
 - Git
+- Optional but recommended: VS Code
 
-## 4. Setup Steps
+## 4. Run Locally on Your Laptop (Step by Step)
 
-### a) Clone the repository
-```bash
-git clone <your-repo-url>
-cd college-ai-assistant
+Follow these steps exactly to make Acadify live on localhost.
+
+### Step 1) Open terminal in project folder
+
+If you already downloaded this project, open terminal and go to the folder:
+
+```powershell
+Set-Location "C:\path\to\Acadify"
 ```
 
-### b) Install dependencies
-```bash
+If you have not downloaded it yet:
+
+```powershell
+git clone <your-repo-url>
+Set-Location Acadify
+```
+
+### Step 2) Create virtual environment
+
+```powershell
+python -m venv .venv
+```
+
+### Step 3) Activate virtual environment
+
+PowerShell:
+
+```powershell
+(Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned)
+& .\.venv\Scripts\Activate.ps1
+```
+
+CMD:
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+### Step 4) Install dependencies
+
+```powershell
 pip install -r backend/requirements.txt
 ```
 
-### c) Get free Groq API key
-- Visit https://console.groq.com
-- Create/login account
-- Generate API key
+### Step 5) Add your Groq API key
 
-### d) Configure environment
-Create or edit `.env` in project root:
+1. Go to https://console.groq.com
+2. Generate API key
+3. Create a file named `.env` in project root and add:
+
 ```env
 GROQ_API_KEY=your_key_here
 ```
 
-### e) Place structured files
-Copy your JSON files into:
-- `data/structured/`
+### Step 6) Verify data folders
 
-### f) Place PDF files
-Copy your PDFs into:
-- `data/pdfs/`
+Make sure these folders contain data:
 
-### g) Build vector index
-```bash
+- `data/structured/` (JSON files)
+- `data/pdfs/` (PDF files, optional but recommended for RAG)
+
+### Step 7) Build vector index (one-time or whenever PDFs change)
+
+```powershell
 python backend/ingest.py
 ```
 
-### h) Run API server
-```bash
-uvicorn backend.main:app --reload
+### Step 8) Start backend API server
+
+```powershell
+uvicorn backend.main:app --host 127.0.0.1 --port 8000
 ```
 
-### i) Open frontend
-Open this file directly in browser:
-- `frontend/index.html`
+Keep this terminal running.
+
+### Step 9) Start frontend static server (new terminal)
+
+Open another terminal in same project folder and run:
+
+```powershell
+python -m http.server 5500 --directory frontend
+```
+
+Keep this terminal running.
+
+### Step 10) Open app in browser
+
+- Frontend UI: http://127.0.0.1:5500/index.html
+- Backend health: http://127.0.0.1:8000/health
+
+### Step 11) Confirm everything is live
+
+You are ready if:
+
+- Frontend page opens at port 5500
+- `/health` returns status JSON at port 8000
+- Chat replies are coming from the backend
+
+### Stop the app
+
+Press `Ctrl + C` in both terminal windows.
 
 ## 5. Folder Structure
 

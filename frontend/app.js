@@ -60,6 +60,9 @@ const el = {
   attendanceTotal: document.getElementById("attendanceTotal"),
   attendanceAttended: document.getElementById("attendanceAttended"),
   attendanceCalcBtn: document.getElementById("attendanceCalcBtn"),
+  attendanceResetBtn: document.getElementById("attendanceResetBtn"),
+  attendanceTips: document.getElementById("attendanceTips"),
+  attendanceFillButtons: document.getElementById("attendanceFillButtons"),
   attendanceResult: document.getElementById("attendanceResult"),
   addSubjectBtn: document.getElementById("addSubjectBtn"),
   autofillSem3Btn: document.getElementById("autofillSem3Btn"),
@@ -465,6 +468,39 @@ function attendanceColor(percentage) {
   return "var(--danger)";
 }
 
+function updateAttendanceHint() {
+  if (!el.attendanceTips) return;
+
+  const total = Number(el.attendanceTotal.value);
+  const attended = Number(el.attendanceAttended.value);
+
+  if (!Number.isFinite(total) || total <= 0 || !Number.isFinite(attended) || attended < 0) {
+    el.attendanceTips.textContent = "Enter values to see your status and next action plan.";
+    return;
+  }
+
+  if (attended > total) {
+    el.attendanceTips.textContent = "Attended classes cannot be more than total classes.";
+    return;
+  }
+
+  const current = (attended / total) * 100;
+  if (current >= 75) {
+    el.attendanceTips.textContent = `Great! Current attendance is ${current.toFixed(2)}%. You are in safe zone.`;
+  } else if (current >= 70) {
+    el.attendanceTips.textContent = `Current attendance is ${current.toFixed(2)}%. You are close, avoid missing classes.`;
+  } else {
+    el.attendanceTips.textContent = `Current attendance is ${current.toFixed(2)}%. You need recovery classes to reach 75%.`;
+  }
+}
+
+function resetAttendanceForm() {
+  el.attendanceTotal.value = "";
+  el.attendanceAttended.value = "";
+  el.attendanceResult.classList.add("hidden");
+  updateAttendanceHint();
+}
+
 async function calculateAttendance() {
   const total = Number(el.attendanceTotal.value);
   const attended = Number(el.attendanceAttended.value);
@@ -483,10 +519,15 @@ async function calculateAttendance() {
     const pct = Number(result.current_percentage || 0);
     const statusClass = pct >= 75 ? "status-safe" : pct >= 70 ? "status-risk" : "status-danger";
     const statusText = pct >= 75 ? "🟢 SAFE - You can appear in ESE" : pct >= 70 ? "🟡 AT RISK - Very close to limit" : "🔴 DETAINED - Below 75% threshold";
+    const fillWidth = Math.max(0, Math.min(100, pct));
 
     el.attendanceResult.classList.remove("hidden");
     el.attendanceResult.innerHTML = `
       <div class="attendance-circle" style="background:${attendanceColor(pct)}">${pct.toFixed(2)}%</div>
+      <div class="attendance-summary"><strong>${attended}</strong> attended out of <strong>${total}</strong> classes</div>
+      <div class="attendance-meter">
+        <div class="attendance-meter-fill" style="width:${fillWidth}%; background:${attendanceColor(pct)}"></div>
+      </div>
       <div class="status-banner ${statusClass}">${statusText}</div>
       <div class="stats-grid">
         <div><strong>Classes to attend to reach 75%:</strong><br />${result.classes_needed_to_reach_75}</div>
@@ -660,12 +701,6 @@ async function init() {
     renderHolidayCards(jsonData.holidays);
     renderSubjectCards(jsonData.subjects3, 3);
 
-    renderMessage(
-      "👋 Hello! I'm CollegeAI, your academic assistant at KIET.\nI can help you with:\n• 📅 Exam dates and schedules\n• 📚 Subject syllabus and topics\n• 🎯 Marks and credit structure\n• 🗓️ Holidays and important dates\n• 📊 Attendance calculations\nNote: I serve CSE/CS branch students only.",
-      { type: "json_lookup", sources: ["Structured JSON"] },
-      true
-    );
-
     if (el.cgpaRows.children.length === 0) {
       addCgpaRow();
     }
@@ -730,6 +765,22 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   el.attendanceCalcBtn.addEventListener("click", calculateAttendance);
+  el.attendanceResetBtn.addEventListener("click", resetAttendanceForm);
+  el.attendanceFillButtons.addEventListener("click", (event) => {
+    const btn = event.target.closest(".attendance-fill");
+    if (!btn) return;
+    el.attendanceTotal.value = btn.dataset.total || "";
+    el.attendanceAttended.value = btn.dataset.attended || "";
+    updateAttendanceHint();
+  });
+
+  [el.attendanceTotal, el.attendanceAttended].forEach((input) => {
+    input.addEventListener("input", updateAttendanceHint);
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") calculateAttendance();
+    });
+  });
+  updateAttendanceHint();
 
   el.addSubjectBtn.addEventListener("click", () => addCgpaRow());
   el.autofillSem3Btn.addEventListener("click", () => autoFillCGPA(3));
